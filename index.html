@@ -1,0 +1,2441 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- SEO Primary Metadata -->
+  <title>Appfinity Technologies | Android App Development Studio</title>
+  <meta name="description" content="Appfinity Technologies is an Android software engineering studio. We design, build, and launch production-ready native Android apps with Jetpack Compose, Kotlin, and modern architecture.">
+  <meta name="keywords" content="Android App Development, Android Development Company, Native Android Apps, Kotlin Development, Jetpack Compose, Android App Development Studio, Google Play App Development, Android Engineering, Gamefinity Universe">
+  <meta name="author" content="Appfinity Technologies">
+  
+  <!-- Open Graph / Social Media -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Appfinity Technologies | Android App Development Studio">
+  <meta property="og:description" content="We build Android apps ready for production. Clean Kotlin, Jetpack Compose, Material Design 3, and production-ready architecture.">
+  <meta property="og:url" content="https://appfinity.tech">
+  
+  <!-- Favicon (Inline SVG Android Glyph) -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%230F9D58'><path d='M17.523 15.3414c-.5511 0-.9993-.4486-.9993-.9997s.4482-.9993.9993-.9993c.551 0 .9993.4482.9993.9993.0001.5511-.4483.9997-.9993.9997m-11.046 0c-.5511 0-.9993-.4486-.9993-.9997s.4482-.9993.9993-.9993c.5511 0 .9993.4482.9993.9993 0 .5511-.4482.9997-.9993.9997m11.4045-6.02l1.9973-3.4592a.416.416 0 00-.1521-.5676.416.416 0 00-.5676.1521l-2.0223 3.503C15.5802 8.4116 13.8437 8.125 12 8.125s-3.5802.2866-5.1368.8297L4.8409 5.4517a.416.416 0 00-.5676-.1521.416.416 0 00-.1521.5676l1.9973 3.4592C2.6889 11.1867.3438 14.6589 0 18.75h24c-.3438-4.0911-2.6889-7.5633-6.1185-9.4286'/></svg>">
+
+  <!-- Google Fonts: Plus Jakarta Sans & JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400;1,600&display=swap" rel="stylesheet">
+
+  <!-- Main Stylesheet -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Top Viewport Reading Progress Bar -->
+  <div class="scroll-progress-bar" id="scrollProgressBar" aria-hidden="true"></div>
+
+  <!-- ========================================================================
+       FLOATING CAPSULE NAVBAR
+       ======================================================================== -->
+  <div class="header-wrapper">
+    <header class="navbar">
+      <!-- Brand Logo -->
+      <a href="#home" class="brand-logo" aria-label="Appfinity Technologies Home">
+        <div class="brand-icon-box">
+          <svg viewBox="0 0 24 24" fill="currentColor">
+            <path d="M17.5 15.5c-.55 0-1-.45-1-1s.45-1 1-1 1 .45 1 1-.45 1-1 1m-11 0c-.55 0-1-.45-1-1s.45-1 1-1 1 .45 1 1-.45 1-1 1m11.4-6l2-3.46c.11-.19.04-.44-.15-.55a.42.42 0 00-.57.15l-2.02 3.5c-1.56-.54-3.3-.84-5.16-.84s-3.6.3-5.16.84L4.84 5.64a.42.42 0 00-.57-.15c-.19.11-.26.36-.15.55l2 3.46C2.69 11.36.34 14.83 0 18.92h24c-.34-4.09-2.69-7.56-6.1-9.42"/>
+          </svg>
+        </div>
+        <div class="brand-text-wrap">
+          <span class="brand-title">Appfinity</span>
+          <span class="brand-sub">Technologies</span>
+        </div>
+      </a>
+
+      <!-- Studio Live Status Badge (Navbar Center-Left) with Availability Popover -->
+      <div class="nav-status-pill" title="Studio Availability" tabindex="0">
+        <span class="status-dot"></span>
+        <span class="status-text">Accepting Projects</span>
+        <div class="status-popover">
+          <div class="status-popover-title">
+            <span>Studio Capacity</span>
+            <span class="status-popover-badge">Q3/Q4 2026</span>
+          </div>
+          <p>Currently onboarding 2 production Android projects (Greenfield MVP or Jetpack Compose Migration). Sprints start bi-weekly.</p>
+        </div>
+      </div>
+
+      <!-- Desktop Navigation Links (Single-Page Smooth Scrolling) -->
+      <nav class="nav-desktop" aria-label="Primary Navigation">
+        <ul class="nav-links">
+          <li><a href="#home" class="nav-link active">Home</a></li>
+          <li><a href="#about" class="nav-link">About</a></li>
+          <li><a href="#services" class="nav-link">Services</a></li>
+          <li><a href="#work" class="nav-link">Work</a></li>
+          <li><a href="#engineering" class="nav-link">Engineering</a></li>
+          <li><a href="#process" class="nav-link">Process</a></li>
+          <li><a href="#faq" class="nav-link">FAQ</a></li>
+          <li><a href="#contact" class="nav-link">Contact</a></li>
+        </ul>
+      </nav>
+
+      <!-- Nav CTA & Mobile Toggle -->
+      <div class="nav-actions">
+        <!-- Theme & Material You Dynamic Color Control -->
+        <div class="theme-switch-group">
+          <button type="button" class="btn-theme-toggle" id="btnThemeToggle" aria-label="Toggle Light and Dark Mode" title="Toggle Light/Dark Theme (Press T)">
+            <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+            <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+          </button>
+          <div class="palette-dots-row" title="Material You Accent Color">
+            <div class="palette-dot dot-emerald active" data-theme="emerald" title="Android Emerald"></div>
+            <div class="palette-dot dot-cyan" data-theme="cyan" title="Pixel Cyan"></div>
+            <div class="palette-dot dot-purple" data-theme="purple" title="Nova Purple"></div>
+            <div class="palette-dot dot-amber" data-theme="amber" title="Solar Amber"></div>
+          </div>
+        </div>
+
+        <!-- Quick Command Palette Trigger (Cmd+K / Ctrl+K) -->
+        <button class="btn-cmd-palette" id="btnOpenCommandPalette" aria-label="Open Command Palette" title="Command Palette">
+          <kbd class="cmd-kbd" id="cmdKbdLabel">Ctrl K</kbd>
+        </button>
+
+        <a href="#contact" class="btn btn-nav-cta">
+          <span>Start a Project</span>
+          <svg class="btn-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="5" y1="12" x2="19" y2="12"></line>
+            <polyline points="12 5 19 12 12 19"></polyline>
+          </svg>
+        </a>
+
+        <!-- Mobile Menu Hamburger Button -->
+        <button class="mobile-menu-toggle" aria-label="Open Mobile Menu" aria-expanded="false">
+          <span class="hamburger-bar"></span>
+          <span class="hamburger-bar"></span>
+          <span class="hamburger-bar"></span>
+        </button>
+      </div>
+    </header>
+  </div>
+
+  <!-- Mobile Drawer Overlay -->
+  <div class="mobile-nav-overlay" aria-hidden="true">
+    <div class="mobile-drawer" role="dialog" aria-modal="true" aria-label="Mobile Navigation">
+      <div class="mobile-drawer-top">
+        <div class="mobile-drawer-header">
+          <div class="brand-logo">
+            <div class="brand-icon-box">
+              <svg viewBox="0 0 24 24" fill="currentColor">
+                <path d="M17.5 15.5c-.55 0-1-.45-1-1s.45-1 1-1 1 .45 1 1-.45 1-1 1m-11 0c-.55 0-1-.45-1-1s.45-1 1-1 1 .45 1 1-.45 1-1 1m11.4-6l2-3.46c.11-.19.04-.44-.15-.55a.42.42 0 00-.57.15l-2.02 3.5c-1.56-.54-3.3-.84-5.16-.84s-3.6.3-5.16.84L4.84 5.64a.42.42 0 00-.57-.15c-.19.11-.26.36-.15.55l2 3.46C2.69 11.36.34 14.83 0 18.92h24c-.34-4.09-2.69-7.56-6.1-9.42"/>
+              </svg>
+            </div>
+            <div class="brand-text-wrap">
+              <span class="brand-title">Appfinity</span>
+              <span class="brand-sub">Technologies</span>
+            </div>
+          </div>
+          <button class="mobile-drawer-close" aria-label="Close Mobile Menu">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <line x1="18" y1="6" x2="6" y2="18"></line>
+              <line x1="6" y1="6" x2="18" y2="18"></line>
+            </svg>
+          </button>
+        </div>
+
+        <ul class="mobile-drawer-links">
+          <li><a href="#home" class="mobile-drawer-link active">Home</a></li>
+          <li><a href="#about" class="mobile-drawer-link">About</a></li>
+          <li><a href="#services" class="mobile-drawer-link">Services</a></li>
+          <li><a href="#work" class="mobile-drawer-link">Work</a></li>
+          <li><a href="#engineering" class="mobile-drawer-link">Engineering</a></li>
+          <li><a href="#process" class="mobile-drawer-link">Process</a></li>
+          <li><a href="#faq" class="mobile-drawer-link">FAQ</a></li>
+          <li><a href="#contact" class="mobile-drawer-link">Contact</a></li>
+        </ul>
+
+        <!-- Mobile Drawer Theme Control -->
+        <div style="margin-top: 24px; padding: 14px 16px; background: rgba(0,0,0,0.04); border-radius: 12px; display: flex; align-items: center; justify-content: space-between;">
+          <span style="font-size: 13px; font-weight: 600;">Studio Theme</span>
+          <button type="button" class="btn btn-secondary btn-sm" id="btnMobileThemeToggle" style="padding: 6px 12px; font-size: 12px;">Toggle Dark Mode</button>
+        </div>
+      </div>
+
+      <div class="mobile-drawer-footer">
+        <a href="#contact" class="btn btn-primary btn-full">Start a Project →</a>
+        <div class="drawer-contact-note">
+          <span class="drawer-contact-lbl">Direct engineering line</span>
+          <a href="mailto:appfinitytechnologies@gmail.com" class="drawer-contact-email">appfinitytechnologies@gmail.com</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <main>
+    <!-- ======================================================================
+         HERO SECTION (#home)
+         ====================================================================== -->
+    <section id="home" class="hero-section">
+      <div class="hero-ambient-glow" aria-hidden="true"></div>
+      <div class="hero-grid-pattern" aria-hidden="true"></div>
+      
+      <!-- Tech crosshair corner accents -->
+      <div class="hero-crosshair crosshair-top-left" aria-hidden="true">+</div>
+      <div class="hero-crosshair crosshair-bottom-right" aria-hidden="true">+</div>
+
+      <div class="container">
+        <div class="hero-grid">
+          <!-- Hero Copy Column -->
+          <div class="hero-content">
+            <div class="hero-badge-wrap">
+              <span class="badge-pill">
+                <span class="dot"></span>
+                ANDROID ENGINEERING STUDIO
+              </span>
+            </div>
+
+            <h1 class="hero-title">
+              We Build<br>
+              <span class="hero-highlight">Android Apps</span><br>
+              That Are Ready for Production.
+            </h1>
+
+            <p class="hero-desc">
+              We design, engineer and launch modern native Android applications with clean interfaces, reliable performance and production-ready architecture.
+            </p>
+
+            <div class="hero-cta-group">
+              <a href="#contact" class="btn btn-hero-primary">
+                <span>Start an Android Project</span>
+                <svg class="btn-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <line x1="5" y1="12" x2="19" y2="12"></line>
+                  <polyline points="12 5 19 12 12 19"></polyline>
+                </svg>
+              </a>
+
+              <a href="#work" class="btn btn-hero-secondary">
+                <span>Explore Our Work</span>
+              </a>
+            </div>
+
+            <!-- Compact Trust Row -->
+            <div class="hero-trust-row">
+              <div class="trust-item">
+                <div class="trust-icon-wrap">
+                  <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.5 15.5c-.55 0-1-.45-1-1s.45-1 1-1 1 .45 1 1-.45 1-1 1m-11 0c-.55 0-1-.45-1-1s.45-1 1-1 1 .45 1 1-.45 1-1 1m11.4-6l2-3.46c.11-.19.04-.44-.15-.55a.42.42 0 00-.57.15l-2.02 3.5c-1.56-.54-3.3-.84-5.16-.84s-3.6.3-5.16.84L4.84 5.64a.42.42 0 00-.57-.15c-.19.11-.26.36-.15.55l2 3.46C2.69 11.36.34 14.83 0 18.92h24c-.34-4.09-2.69-7.56-6.1-9.42"/></svg>
+                </div>
+                <span>Android Focused</span>
+              </div>
+              <span class="trust-sep" aria-hidden="true">•</span>
+              <div class="trust-item">
+                <div class="trust-icon-wrap">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                </div>
+                <span>Production Ready</span>
+              </div>
+              <span class="trust-sep" aria-hidden="true">•</span>
+              <div class="trust-item">
+                <div class="trust-icon-wrap">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg>
+                </div>
+                <span>Built to Scale</span>
+              </div>
+            </div>
+
+            <!-- Palette hooks for JS backwards compatibility -->
+            <div class="theme-switcher-bar" style="display: none;" aria-hidden="true">
+              <span class="theme-switcher-lbl">Color System:</span>
+              <div class="theme-dot-btn dot-emerald active" data-theme="emerald" title="Emerald Palette"></div>
+              <div class="theme-dot-btn dot-cyan" data-theme="cyan" title="Cyan Palette"></div>
+              <div class="theme-dot-btn dot-purple" data-theme="purple" title="Purple Palette"></div>
+              <div class="theme-dot-btn dot-amber" data-theme="amber" title="Amber Palette"></div>
+            </div>
+          </div>
+
+          <!-- Hero Visual Column: Flagship Android Product Mockup -->
+          <div class="hero-visual-wrap">
+            <div class="phone-ambient-halo" aria-hidden="true"></div>
+
+            <!-- Floating Technical Badges with Dual-Layer Glass -->
+            <div class="floating-badge fb-1" title="Strict Kotlin 2.0 Coroutines">
+              <div class="fb-icon-wrap fb-kotlin">
+                <svg viewBox="0 0 24 24" fill="currentColor">
+                  <polygon points="2,2 22,2 12,12"/>
+                  <polygon points="2,22 12,12 22,22"/>
+                  <polygon points="2,2 12,12 2,22"/>
+                </svg>
+              </div>
+              <div class="fb-text">
+                <span class="fb-title">Kotlin 2.0</span>
+                <span class="fb-sub">Strict Coroutines</span>
+              </div>
+            </div>
+
+            <div class="floating-badge fb-2" title="Jetpack Compose 120 FPS">
+              <div class="fb-icon-wrap fb-compose">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <rect x="2" y="3" width="20" height="14" rx="2"></rect>
+                  <line x1="8" y1="21" x2="16" y2="21"></line>
+                  <line x1="12" y1="17" x2="12" y2="21"></line>
+                </svg>
+              </div>
+              <div class="fb-text">
+                <span class="fb-title">Jetpack Compose</span>
+                <span class="fb-sub">120 FPS Rendering</span>
+              </div>
+            </div>
+
+            <div class="floating-badge fb-3" title="Production Ready on Google Play">
+              <div class="fb-icon-wrap fb-store">
+                <svg viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 14.5v-9l6 4.5-6 4.5z"/>
+                </svg>
+              </div>
+              <div class="fb-text">
+                <span class="fb-title">Google Play Ready</span>
+                <span class="fb-sub">AAB &amp; Vitals</span>
+              </div>
+            </div>
+
+            <!-- Realistic Flagship Android Device Frame with Hardware Nuances -->
+            <div class="flagship-phone-frame" id="heroPhoneFrame">
+              <!-- Physical Chassis Details -->
+              <div class="phone-button phone-vol-up" aria-hidden="true"></div>
+              <div class="phone-button phone-vol-down" aria-hidden="true"></div>
+              <div class="phone-button phone-power" aria-hidden="true"></div>
+
+              <!-- Specular Screen Glare -->
+              <div class="phone-screen-glare" id="phoneScreenGlare" aria-hidden="true"></div>
+
+              <div class="phone-screen-glass">
+                <!-- Status Bar with Centered Punch Hole & Realtime Clock -->
+                <div class="phone-status-bar">
+                  <span class="phone-clock" id="phoneClockDisplay">09:41</span>
+                  <div class="phone-punch-hole">
+                    <div class="lens-glare"></div>
+                  </div>
+                  <div class="status-indicators">
+                    <span class="status-5g">5G</span>
+                    <svg viewBox="0 0 24 24" class="status-svg" fill="currentColor"><path d="M12 3c-4.97 0-9 4.03-9 9 0 2.12.74 4.07 1.97 5.61L12 22l7.03-4.39C20.26 16.07 21 14.12 21 12c0-4.97-4.03-9-9-9z"/></svg>
+                    <svg viewBox="0 0 24 24" class="status-svg" fill="currentColor"><path d="M15.67 4H14V2h-4v2H8.33C7.6 4 7 4.6 7 5.33v15.33C7 21.4 7.6 22 8.33 22h7.33c.74 0 1.34-.6 1.34-1.33V5.33C17 4.6 16.4 4 15.67 4z"/></svg>
+                  </div>
+                </div>
+
+                <!-- Android 15 Dynamic Notification Toast -->
+                <div class="mockup-toast-notification">
+                  <div class="toast-left">
+                    <span class="toast-tag">BUILD STABLE</span>
+                    <span class="toast-message">Release v2.4.0 • Staged 100%</span>
+                  </div>
+                  <span class="toast-time">Just now</span>
+                </div>
+
+                <!-- Phone Application Body -->
+                <div class="phone-app-body">
+                  <!-- Phone Screen Mode Switcher Tabs -->
+                  <div class="phone-mode-tabs" id="phoneModeTabs">
+                    <button type="button" class="phone-mode-tab active" data-phone-mode="vitals">Telemetry</button>
+                    <button type="button" class="phone-mode-tab" data-phone-mode="compose">Compose UI</button>
+                    <button type="button" class="phone-mode-tab" data-phone-mode="arch">Data Flow</button>
+                  </div>
+                  <!-- App Header -->
+                  <div class="app-header">
+                    <div class="app-header-left">
+                      <div class="app-logo-badge">
+                        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.5 15.5c-.55 0-1-.45-1-1s.45-1 1-1 1 .45 1 1-.45 1-1 1m-11 0c-.55 0-1-.45-1-1s.45-1 1-1 1 .45 1 1-.45 1-1 1m11.4-6l2-3.46c.11-.19.04-.44-.15-.55a.42.42 0 00-.57.15l-2.02 3.5c-1.56-.54-3.3-.84-5.16-.84s-3.6.3-5.16.84L4.84 5.64a.42.42 0 00-.57-.15c-.19.11-.26.36-.15.55l2 3.46C2.69 11.36.34 14.83 0 18.92h24c-.34-4.09-2.69-7.56-6.1-9.42"/></svg>
+                        <span>Appfinity Studio</span>
+                      </div>
+                    </div>
+                    <div class="app-live-indicator">
+                      <span class="pulse-emerald"></span>
+                      <span>Production</span>
+                    </div>
+                  </div>
+
+                  <!-- Android Vitals Telemetry Card -->
+                  <div class="app-metrics-card" id="heroTelemetryCard" title="Click to pulse telemetry">
+                    <div class="app-metrics-top">
+                      <div>
+                        <div class="app-metrics-label">UI Rendering Speed</div>
+                        <div class="app-metrics-val" id="heroFpsVal">5.8<span class="app-metrics-unit">ms</span></div>
+                      </div>
+                      <span class="app-metrics-tag">120 FPS Native</span>
+                    </div>
+                    <div class="app-chart-bars" id="heroChartBars">
+                      <div class="bar" style="height: 38%;"></div>
+                      <div class="bar" style="height: 48%;"></div>
+                      <div class="bar" style="height: 42%;"></div>
+                      <div class="bar" style="height: 60%;"></div>
+                      <div class="bar" style="height: 52%;"></div>
+                      <div class="bar active" style="height: 84%;"></div>
+                      <div class="bar" style="height: 46%;"></div>
+                      <div class="bar" style="height: 54%;"></div>
+                      <div class="bar" style="height: 40%;"></div>
+                    </div>
+                    <div class="app-metrics-footer">
+                      <span>Compose Frame Time</span>
+                      <span class="status-good">✓ Sub-8ms Target</span>
+                    </div>
+                  </div>
+
+                  <!-- Product Quick Spec Tiles -->
+                  <div class="app-spec-grid">
+                    <div class="app-spec-tile">
+                      <div class="spec-tile-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+                      </div>
+                      <div class="spec-tile-title">Target SDK</div>
+                      <div class="spec-tile-val">API 35 (Android 15)</div>
+                    </div>
+
+                    <div class="app-spec-tile">
+                      <div class="spec-tile-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline></svg>
+                      </div>
+                      <div class="spec-tile-title">Architecture</div>
+                      <div class="spec-tile-val">MVI + Clean Kotlin</div>
+                    </div>
+                  </div>
+
+                  <!-- Phone Screen Mode 2: Live Jetpack Compose Component Preview (Initially hidden) -->
+                  <div class="phone-compose-demo" id="phoneComposeDemo" style="display:none;">
+                    <div class="compose-demo-title">Material 3 Interactive State</div>
+                    <div class="compose-interactive-control">
+                      <span class="control-label">Coroutines Channel</span>
+                      <label class="compose-switch">
+                        <input type="checkbox" id="composeSwitchDemo" checked>
+                        <span class="switch-track"></span>
+                      </label>
+                    </div>
+                    <div class="compose-slider-wrap">
+                      <div class="slider-labels">
+                        <span>Recomposition Rate</span>
+                        <span id="composeSliderVal">120 Hz</span>
+                      </div>
+                      <input type="range" class="compose-slider" id="composeSliderDemo" min="60" max="144" value="120">
+                    </div>
+                    <div class="compose-pill-row">
+                      <span class="compose-chip active">@Composable</span>
+                      <span class="compose-chip">Flow</span>
+                      <span class="recomp-ticker" id="recompTicker">Render: 120 FPS (0 recomps)</span>
+                    </div>
+                  </div>
+
+                  <!-- Phone Screen Mode 3: Live Clean Architecture Packet Flow (Initially hidden) -->
+                  <div class="phone-arch-flow" id="phoneArchFlow" style="display:none; position: relative;">
+                    <div class="stream-packet-dot" id="streamPacket"></div>
+                    <div class="arch-flow-stream">
+                      <div class="stream-node active" id="nodeUI">
+                        <span class="node-badge">UI</span>
+                        <span class="node-label">Jetpack Compose</span>
+                      </div>
+                      <div class="stream-arrow" id="arrow1">↓</div>
+                      <div class="stream-node" id="nodeVM">
+                        <span class="node-badge">STATE</span>
+                        <span class="node-label">ViewModel StateFlow</span>
+                      </div>
+                      <div class="stream-arrow" id="arrow2">↓</div>
+                      <div class="stream-node" id="nodeDB">
+                        <span class="node-badge">DATA</span>
+                        <span class="node-label">Room SQLite + Remote</span>
+                      </div>
+                    </div>
+                    <div class="stream-status">
+                      <span class="pulse-emerald"></span>
+                      <span id="streamStatusText">Unidirectional event stream: OK</span>
+                    </div>
+                  </div>
+
+                  <!-- App Bottom Navigation Bar -->
+                  <div class="app-bottom-nav">
+                    <div class="nav-item-icon active">
+                      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/></svg>
+                      <span>Studio</span>
+                    </div>
+                    <div class="nav-item-icon">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+                      <span>Vitals</span>
+                    </div>
+                    <div class="nav-item-icon">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                      <span>Console</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         CAPABILITY STRIP
+         ====================================================================== -->
+    <section class="capability-strip-section" aria-label="Core Studio Capabilities">
+      <div class="container">
+        <div class="capability-strip">
+          <div class="cap-item">
+            <div class="cap-icon-box">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect>
+                <line x1="12" y1="18" x2="12.01" y2="18"></line>
+              </svg>
+            </div>
+            <div class="cap-text">
+              <h3 class="cap-title">Android First</h3>
+              <p class="cap-desc">100% focused engineering for Google’s mobile ecosystem.</p>
+            </div>
+          </div>
+
+          <div class="cap-divider" aria-hidden="true"></div>
+
+          <div class="cap-item">
+            <div class="cap-icon-box">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+            </div>
+            <div class="cap-text">
+              <h3 class="cap-title">Production Ready</h3>
+              <p class="cap-desc">Built for scale, battery efficiency and store compliance.</p>
+            </div>
+          </div>
+
+          <div class="cap-divider" aria-hidden="true"></div>
+
+          <div class="cap-item">
+            <div class="cap-icon-box">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
+              </svg>
+            </div>
+            <div class="cap-text">
+              <h3 class="cap-title">Performance Focused</h3>
+              <p class="cap-desc">Sub-millisecond touch tracking and 120 FPS zero-jank UI.</p>
+            </div>
+          </div>
+
+          <div class="cap-divider" aria-hidden="true"></div>
+
+          <div class="cap-item">
+            <div class="cap-icon-box">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path>
+                <polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline>
+              </svg>
+            </div>
+            <div class="cap-text">
+              <h3 class="cap-title">Clean Codebase</h3>
+              <p class="cap-desc">Modular architecture designed for seamless team growth.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         ABOUT SECTION (#about)
+         ====================================================================== -->
+    <section id="about" class="section-pad about-section">
+      <div class="container">
+        <div class="about-editorial-grid">
+          <!-- Text Column -->
+          <div class="about-text-col">
+            <span class="section-label">ENGINEERING DISCIPLINE</span>
+            <h2 class="section-title">Focused on Android.<br>Built for Real Products.</h2>
+            <p class="about-lead">
+              Appfinity Technologies is an Android software engineering studio. We partner with ambitious founders, product teams, and businesses to design, architect, and release high-performance native Android applications.
+            </p>
+            <p class="about-body">
+              Unlike generalized agencies that spread their resources thin across dozens of platforms, our entire infrastructure, toolchain, and design expertise are deeply tailored to Google’s Android ecosystem.
+            </p>
+
+            <div class="about-pillars-grid">
+              <div class="about-pillar-item">
+                <div class="pillar-check">
+                  <span class="pillar-num">01</span>
+                </div>
+                <div>
+                  <h4 class="pillar-title">Modern Android UI</h4>
+                  <p class="pillar-desc">Jetpack Compose + Material 3 with ergonomic gestures, fluid layouts and deterministic state.</p>
+                </div>
+              </div>
+
+              <div class="about-pillar-item">
+                <div class="pillar-check">
+                  <span class="pillar-num">02</span>
+                </div>
+                <div>
+                  <h4 class="pillar-title">Scalable Architecture</h4>
+                  <p class="pillar-desc">Clean Kotlin + predictable state (MVI), modular Gradle structure, and resilient offline persistence.</p>
+                </div>
+              </div>
+
+              <div class="about-pillar-item">
+                <div class="pillar-check">
+                  <span class="pillar-num">03</span>
+                </div>
+                <div>
+                  <h4 class="pillar-title">Production Quality</h4>
+                  <p class="pillar-desc">Sub-380ms cold starts, Robolectric automated test suites, and strict Google Play release discipline.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Editorial Process Visualization: Interactive Android Delivery System -->
+          <div class="about-visual-col">
+            <div class="editorial-card pipeline-editorial-card">
+              <div class="pipeline-card-header">
+                <div>
+                  <span class="card-eyebrow">ENGINEERING PIPELINE</span>
+                  <h3 class="pipeline-heading">Android Delivery System</h3>
+                </div>
+                <span class="status-chip-live">Interactive Flow</span>
+              </div>
+
+              <div class="editorial-pipeline-list" id="deliveryPipelineList">
+                <div class="p-node" data-delivery-step="1" tabindex="0" role="button">
+                  <div class="p-node-num">01</div>
+                  <div class="p-node-content">
+                    <div class="p-node-title">IDEA</div>
+                    <div class="p-node-desc">Requirements analysis, technical feasibility &amp; module boundaries</div>
+                  </div>
+                </div>
+
+                <div class="p-node-line"></div>
+
+                <div class="p-node" data-delivery-step="2" tabindex="0" role="button">
+                  <div class="p-node-num">02</div>
+                  <div class="p-node-content">
+                    <div class="p-node-title">PLAN</div>
+                    <div class="p-node-desc">Technical architecture, API schemas &amp; state model specification</div>
+                  </div>
+                </div>
+
+                <div class="p-node-line"></div>
+
+                <div class="p-node" data-delivery-step="3" tabindex="0" role="button">
+                  <div class="p-node-num">03</div>
+                  <div class="p-node-content">
+                    <div class="p-node-title">DESIGN</div>
+                    <div class="p-node-desc">Material 3 UI systems, dynamic theming &amp; interactive flow prototypes</div>
+                  </div>
+                </div>
+
+                <div class="p-node-line"></div>
+
+                <div class="p-node active" data-delivery-step="4" tabindex="0" role="button">
+                  <div class="p-node-num">04</div>
+                  <div class="p-node-content">
+                    <div class="p-node-title">DEVELOP</div>
+                    <div class="p-node-desc">Clean Kotlin 2.0, Jetpack Compose UI &amp; Room DB persistence</div>
+                  </div>
+                </div>
+
+                <div class="p-node-line"></div>
+
+                <div class="p-node" data-delivery-step="5" tabindex="0" role="button">
+                  <div class="p-node-num">05</div>
+                  <div class="p-node-content">
+                    <div class="p-node-title">TEST</div>
+                    <div class="p-node-desc">Robolectric headless audits &amp; real Android physical device matrices</div>
+                  </div>
+                </div>
+
+                <div class="p-node-line"></div>
+
+                <div class="p-node" data-delivery-step="6" tabindex="0" role="button">
+                  <div class="p-node-num">06</div>
+                  <div class="p-node-content">
+                    <div class="p-node-title">LAUNCH</div>
+                    <div class="p-node-desc">Google Play Console release, App Bundles &amp; staged rollouts</div>
+                  </div>
+                </div>
+
+                <div class="p-node-line"></div>
+
+                <div class="p-node" data-delivery-step="7" tabindex="0" role="button">
+                  <div class="p-node-num">07</div>
+                  <div class="p-node-content">
+                    <div class="p-node-title">IMPROVE</div>
+                    <div class="p-node-desc">Android Vitals telemetry tracking, optimization &amp; feature iterations</div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Interactive Milestone Card beneath Delivery System -->
+              <div class="delivery-milestone-box" id="deliveryMilestoneBox">
+                <div class="milestone-pill">ACTIVE MILESTONE: DEVELOP</div>
+                <div class="milestone-text">Clean Kotlin code with MVI architecture, Compose screens, Room DB offline caching, and weekly demo APK builds.</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         SERVICES SECTION (#services)
+         ====================================================================== -->
+    <section id="services" class="section-pad services-section">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-label">STUDIO SERVICES</span>
+          <h2 class="section-title">Everything Needed to Ship on Android</h2>
+          <p class="section-subtitle">
+            Comprehensive native engineering services designed to turn product visions into top-ranking, resilient Android applications.
+          </p>
+        </div>
+
+        <!-- Asymmetric Services Grid -->
+        <div class="services-asymmetric-grid">
+          <!-- Dominant Hero Service Card (01) -->
+          <div class="service-card service-hero-card">
+            <div class="service-card-top">
+              <div class="service-index-pill">01 / CORE SERVICE</div>
+              <div class="service-icon-box">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect>
+                  <line x1="12" y1="18" x2="12.01" y2="18"></line>
+                </svg>
+              </div>
+            </div>
+            
+            <div class="service-card-body">
+              <h3 class="service-title">Android App Development</h3>
+              <p class="service-desc">
+                From concept to Google Play production. We engineer modern, scalable Android applications built on clean Kotlin codebases, resilient offline databases, and battle-tested architectures ready for real user scale.
+              </p>
+
+              <div class="service-bullets">
+                <div class="s-bullet">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                  <span>Native Kotlin 2.0 &amp; Jetpack Compose declarative UI</span>
+                </div>
+                <div class="s-bullet">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                  <span>Offline-first syncing with Room DB, Coroutines &amp; DataStore</span>
+                </div>
+                <div class="s-bullet">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                  <span>Multi-module Gradle architecture for fast compilation and scale</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="service-card-footer">
+              <div class="service-tags">
+                <span class="service-tag">Kotlin</span>
+                <span class="service-tag">Jetpack Compose</span>
+                <span class="service-tag">Coroutines</span>
+                <span class="service-tag">Room DB</span>
+              </div>
+              <a href="#contact" class="service-arrow-link" aria-label="Inquire about Android App Development">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+              </a>
+            </div>
+          </div>
+
+          <!-- Secondary Card 1: UI/UX (02) -->
+          <div class="service-card">
+            <div class="service-card-top">
+              <div class="service-index-pill">02 / INTERFACE</div>
+              <div class="service-icon-box">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M12 19l7-7 3 3-7 7-3-3z"></path>
+                  <path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"></path>
+                  <circle cx="11" cy="11" r="2"></circle>
+                </svg>
+              </div>
+            </div>
+            
+            <div class="service-card-body">
+              <h3 class="service-title">UI/UX &amp; Material 3</h3>
+              <p class="service-desc">
+                Polished native interfaces with dynamic theming, smooth micro-interactions, ergonomic one-handed reachability, and fluid 120 FPS animations.
+              </p>
+            </div>
+
+            <div class="service-card-footer">
+              <div class="service-tags">
+                <span class="service-tag">Material 3</span>
+                <span class="service-tag">Compose M3</span>
+                <span class="service-tag">MotionLayout</span>
+              </div>
+              <a href="#contact" class="service-arrow-link" aria-label="Inquire about UI/UX &amp; Material 3">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+              </a>
+            </div>
+          </div>
+
+          <!-- Secondary Card 2: API & Cloud (03) -->
+          <div class="service-card">
+            <div class="service-card-top">
+              <div class="service-index-pill">03 / BACKEND</div>
+              <div class="service-icon-box">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <ellipse cx="12" cy="5" rx="9" ry="3"></ellipse>
+                  <path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"></path>
+                  <path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"></path>
+                </svg>
+              </div>
+            </div>
+            
+            <div class="service-card-body">
+              <h3 class="service-title">API &amp; Cloud Integration</h3>
+              <p class="service-desc">
+                Reliable REST/gRPC backends, OAuth2/Biometric authentication, FCM push notification pipelines, and resilient cloud synchronization.
+              </p>
+            </div>
+
+            <div class="service-card-footer">
+              <div class="service-tags">
+                <span class="service-tag">Ktor / Retrofit</span>
+                <span class="service-tag">Firebase</span>
+                <span class="service-tag">WebSockets</span>
+              </div>
+              <a href="#contact" class="service-arrow-link" aria-label="Inquire about API &amp; Cloud Integration">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+              </a>
+            </div>
+          </div>
+
+          <!-- Lower Row Card 1: Performance (04) -->
+          <div class="service-card">
+            <div class="service-card-top">
+              <div class="service-index-pill">04 / SPEED</div>
+              <div class="service-icon-box">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline>
+                </svg>
+              </div>
+            </div>
+            
+            <div class="service-card-body">
+              <h3 class="service-title">Performance Optimization</h3>
+              <p class="service-desc">
+                Profile baseline execution, slash cold startup latency below 380ms, eliminate frame drops, and minify binary sizes with advanced R8 ProGuard rules.
+              </p>
+            </div>
+
+            <div class="service-card-footer">
+              <div class="service-tags">
+                <span class="service-tag">Baseline Profiles</span>
+                <span class="service-tag">R8 Minify</span>
+                <span class="service-tag">Memory Audits</span>
+              </div>
+              <a href="#contact" class="service-arrow-link" aria-label="Inquire about Performance Optimization">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+              </a>
+            </div>
+          </div>
+
+          <!-- Lower Row Card 2: QA & Testing (05) -->
+          <div class="service-card">
+            <div class="service-card-top">
+              <div class="service-index-pill">05 / QUALITY</div>
+              <div class="service-icon-box">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                  <polyline points="14 2 14 8 20 8"></polyline>
+                  <line x1="16" y1="13" x2="8" y2="13"></line>
+                  <line x1="16" y1="17" x2="8" y2="17"></line>
+                </svg>
+              </div>
+            </div>
+            
+            <div class="service-card-body">
+              <h3 class="service-title">Automated Testing &amp; QA</h3>
+              <p class="service-desc">
+                Comprehensive unit tests, Robolectric headless validation, and Espresso UI automation executed across real device matrices before every release.
+              </p>
+            </div>
+
+            <div class="service-card-footer">
+              <div class="service-tags">
+                <span class="service-tag">Espresso</span>
+                <span class="service-tag">Robolectric</span>
+                <span class="service-tag">CI/CD Pipeline</span>
+              </div>
+              <a href="#contact" class="service-arrow-link" aria-label="Inquire about QA &amp; Testing">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+              </a>
+            </div>
+          </div>
+
+          <!-- Lower Row Card 3: Google Play Production (06) -->
+          <div class="service-card">
+            <div class="service-card-top">
+              <div class="service-index-pill">06 / DEPLOY</div>
+              <div class="service-icon-box">
+                <svg viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 14.5v-9l6 4.5-6 4.5z"/>
+                </svg>
+              </div>
+            </div>
+            
+            <div class="service-card-body">
+              <h3 class="service-title">Google Play Production</h3>
+              <p class="service-desc">
+                App Bundle signing, privacy compliance, policy clearance, staged percentage rollouts, and proactive Android Vitals telemetry monitoring.
+              </p>
+            </div>
+
+            <div class="service-card-footer">
+              <div class="service-tags">
+                <span class="service-tag">App Bundles</span>
+                <span class="service-tag">Play Console</span>
+                <span class="service-tag">Vitals Telemetry</span>
+              </div>
+              <a href="#contact" class="service-arrow-link" aria-label="Inquire about Google Play Deployments">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- iOS Coming Soon Roadmap Banner -->
+        <div class="ios-roadmap-banner">
+          <div class="ios-banner-content">
+            <div class="ios-tag">ROADMAP</div>
+            <div class="ios-text">
+              <span><strong>iOS Development — Coming Soon.</strong> Our current engineering focus is dedicated to native Android products.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         TECHNOLOGY STACK
+         ====================================================================== -->
+    <section class="tech-section" aria-label="Technology Stack">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-label">COMMAND CENTER</span>
+          <h2 class="section-title">Modern Android Tech Stack</h2>
+          <p class="section-subtitle">
+            Engineered with industry-standard Android technologies and first-party Google libraries.
+          </p>
+        </div>
+
+        <!-- Stack Filter Pills with Count Badges -->
+        <div class="tech-filter-pills">
+          <button type="button" class="tech-filter-btn active" data-category="all">All Technologies <span class="filter-count">10</span></button>
+          <button type="button" class="tech-filter-btn" data-category="ui">UI &amp; Experience <span class="filter-count">2</span></button>
+          <button type="button" class="tech-filter-btn" data-category="arch">Android Core <span class="filter-count">3</span></button>
+          <button type="button" class="tech-filter-btn" data-category="data">Data &amp; Cloud <span class="filter-count">3</span></button>
+          <button type="button" class="tech-filter-btn" data-category="play">Release <span class="filter-count">2</span></button>
+        </div>
+
+        <div class="tech-grid" id="techBadgesGrid">
+          <!-- Android Core -->
+          <div class="tech-badge" data-category="arch" data-tech="kotlin">
+            <div class="tech-icon-wrap">
+              <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="2,2 22,2 12,12"/><polygon points="2,22 12,12 22,22"/><polygon points="2,2 12,12 2,22"/></svg>
+            </div>
+            <div class="tech-info">
+              <span class="tech-name">Kotlin</span>
+              <span class="tech-role">Android Core</span>
+            </div>
+          </div>
+
+          <div class="tech-badge" data-category="arch" data-tech="android-sdk">
+            <div class="tech-icon-wrap">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="5" y="2" width="14" height="20" rx="2"/><line x1="12" y1="18" x2="12.01" y2="18"></line></svg>
+            </div>
+            <div class="tech-info">
+              <span class="tech-name">Android SDK</span>
+              <span class="tech-role">Android Core</span>
+            </div>
+          </div>
+
+          <!-- UI & Experience -->
+          <div class="tech-badge" data-category="ui" data-tech="jetpack-compose">
+            <div class="tech-icon-wrap">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+            </div>
+            <div class="tech-info">
+              <span class="tech-name">Jetpack Compose</span>
+              <span class="tech-role">UI &amp; Experience</span>
+            </div>
+          </div>
+
+          <div class="tech-badge" data-category="arch" data-tech="jetpack-libraries">
+            <div class="tech-icon-wrap">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg>
+            </div>
+            <div class="tech-info">
+              <span class="tech-name">Jetpack Libraries</span>
+              <span class="tech-role">Android Core</span>
+            </div>
+          </div>
+
+          <div class="tech-badge" data-category="ui" data-tech="material-3">
+            <div class="tech-icon-wrap">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="3"/></svg>
+            </div>
+            <div class="tech-info">
+              <span class="tech-name">Material 3</span>
+              <span class="tech-role">UI &amp; Experience</span>
+            </div>
+          </div>
+
+          <!-- Data & Cloud -->
+          <div class="tech-badge" data-category="data" data-tech="firebase">
+            <div class="tech-icon-wrap">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M4.5 10.5L7 17l4.5-9L16 17l2.5-6.5"/></svg>
+            </div>
+            <div class="tech-info">
+              <span class="tech-name">Firebase</span>
+              <span class="tech-role">Data &amp; Cloud</span>
+            </div>
+          </div>
+
+          <div class="tech-badge" data-category="data" data-tech="rest-apis">
+            <div class="tech-icon-wrap">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+            </div>
+            <div class="tech-info">
+              <span class="tech-name">REST APIs / Retrofit</span>
+              <span class="tech-role">Data &amp; Cloud</span>
+            </div>
+          </div>
+
+          <div class="tech-badge" data-category="data" data-tech="room-db">
+            <div class="tech-icon-wrap">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 7v10c0 2 3.5 3 8 3s8-1 8-3V7"/><ellipse cx="12" cy="7" rx="8" ry="3"/></svg>
+            </div>
+            <div class="tech-info">
+              <span class="tech-name">Room DB</span>
+              <span class="tech-role">Data &amp; Cloud</span>
+            </div>
+          </div>
+
+          <!-- Release -->
+          <div class="tech-badge" data-category="play" data-tech="google-play">
+            <div class="tech-icon-wrap">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 14.5v-9l6 4.5-6 4.5z"/></svg>
+            </div>
+            <div class="tech-info">
+              <span class="tech-name">Google Play</span>
+              <span class="tech-role">Release</span>
+            </div>
+          </div>
+
+          <div class="tech-badge" data-category="play" data-tech="cicd-bundles">
+            <div class="tech-icon-wrap">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            </div>
+            <div class="tech-info">
+              <span class="tech-name">CI/CD &amp; Bundles</span>
+              <span class="tech-role">Release</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         FEATURED PRODUCT / CASE STUDY (#work & #projects)
+         ====================================================================== -->
+    <section id="work" class="section-pad projects-section">
+      <!-- Hidden anchor alias for #projects -->
+      <div id="projects" style="position: absolute; top: 0; left: 0; pointer-events: none;" aria-hidden="true"></div>
+
+      <div class="container">
+        <div class="section-header">
+          <span class="section-label">FEATURED PRODUCT</span>
+          <h2 class="section-title">Production Case Study</h2>
+          <p class="section-subtitle">
+            A production Android application designed, engineered, and published by Appfinity Technologies.
+          </p>
+        </div>
+
+        <!-- Featured Project: Gamefinity Universe Showcase -->
+        <div class="showcase-card">
+          <div class="showcase-grid">
+            <!-- Project Narrative & Specs -->
+            <div class="showcase-content">
+              <div class="showcase-meta-row">
+                <span class="badge-pill"><span class="dot"></span>LIVE ON GOOGLE PLAY</span>
+                <span class="meta-tag">Android Native</span>
+                <span class="meta-tag">Production</span>
+              </div>
+
+              <h3 class="showcase-title">Gamefinity Universe</h3>
+              
+              <p class="showcase-desc">
+                A high-precision Android puzzle game engineered with sub-millisecond touch tracking, zero-stutter 120 FPS canvas rendering, and resilient offline local database persistence.
+              </p>
+
+              <!-- Metrics -->
+              <div class="showcase-metrics-grid">
+                <div class="s-metric-box">
+                  <div class="s-metric-val">120 FPS</div>
+                  <div class="s-metric-label">Rendering Target</div>
+                </div>
+                <div class="s-metric-box">
+                  <div class="s-metric-val">Offline</div>
+                  <div class="s-metric-label">Local Persistence</div>
+                </div>
+                <div class="s-metric-box">
+                  <div class="s-metric-val">API 26–35</div>
+                  <div class="s-metric-label">Android Compatibility</div>
+                </div>
+                <div class="s-metric-box">
+                  <div class="s-metric-val">&lt; 45 MB</div>
+                  <div class="s-metric-label">Runtime Heap Size</div>
+                </div>
+              </div>
+
+              <div class="showcase-tech-tags">
+                <span class="proj-tag">Puzzle</span>
+                <span class="proj-tag">Casual</span>
+                <span class="proj-tag">Kotlin</span>
+                <span class="proj-tag">Jetpack Compose</span>
+                <span class="proj-tag">Room DB</span>
+                <span class="proj-tag">Google Play</span>
+              </div>
+
+              <div class="showcase-actions">
+                <!-- Google Play Store Button -->
+                <a href="https://play.google.com/store/apps/details?id=com.appfinity.gamefinity" target="_blank" rel="noopener noreferrer" class="btn-playstore" aria-label="View Gamefinity on Google Play Store (Opens in new tab)">
+                  <svg viewBox="0 0 24 24" fill="currentColor" class="playstore-svg">
+                    <path d="M3 20.5v-17c0-.83.67-1.5 1.5-1.5.34 0 .66.12.92.32l14.28 8.5c.67.4.67 1.36 0 1.76l-14.28 8.5c-.26.2-.58.32-.92.32-.83 0-1.5-.67-1.5-1.5z"/>
+                  </svg>
+                  <div class="playstore-btn-text">
+                    <span class="playstore-sub">VIEW ON</span>
+                    <span class="playstore-main">Google Play →</span>
+                  </div>
+                </a>
+
+                <div class="playstore-rating-badge">
+                  <span class="star">★</span>
+                  <span class="rating-num">4.8</span>
+                  <span class="rating-sep">|</span>
+                  <span class="rating-label">Google Play</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Project Visual Showcase with Interactive Gameplay Preview -->
+            <div class="showcase-visual-col">
+              <div class="interactive-preview-header">
+                <div class="preview-badge">
+                  <span class="pulse-emerald"></span>
+                  <span>Live Product Preview</span>
+                </div>
+                <!-- Screen Switcher Tabs -->
+                <div class="screen-switcher-tabs">
+                  <button type="button" class="screen-tab-btn active" data-screen="board">Gameplay Board</button>
+                  <button type="button" class="screen-tab-btn" data-screen="scores">Leaderboard</button>
+                  <!-- Audio FX Synthesizer Toggle -->
+                  <button type="button" class="btn-audio-toggle" id="btnAudioToggle" aria-label="Toggle Sound Effects" title="Toggle Sound Synthesizer">
+                    <span id="audioToggleIcon">🔇</span>
+                    <span id="audioToggleLabel">Audio</span>
+                  </button>
+                </div>
+              </div>
+
+              <div class="game-phone-device">
+                <div class="game-screen-shell">
+                  <!-- Screen 1: Interactive Board -->
+                  <div class="game-screen-content" data-screen-content="board">
+                    <div class="game-ui-header">
+                      <div class="game-score-box">
+                        <div class="game-score-lbl">SCORE</div>
+                        <div class="game-score-val" id="liveScoreVal">24,850</div>
+                      </div>
+                      <div class="game-score-box">
+                        <div class="game-score-lbl">COMBO</div>
+                        <div class="game-score-val combo-accent" id="liveComboVal">x4</div>
+                      </div>
+                      <div class="game-score-box">
+                        <div class="game-score-lbl">BEST</div>
+                        <div class="game-score-val">68,200</div>
+                      </div>
+                    </div>
+
+                    <!-- 8x8 Grid Puzzle Board Visual -->
+                    <div class="game-board" id="gameBoardGrid">
+                      <!-- Row 1 -->
+                      <div class="g-cell"></div><div class="g-cell filled-green"></div><div class="g-cell filled-green"></div><div class="g-cell"></div><div class="g-cell"></div><div class="g-cell filled-cyan"></div><div class="g-cell filled-cyan"></div><div class="g-cell"></div>
+                      <!-- Row 2 -->
+                      <div class="g-cell"></div><div class="g-cell filled-green"></div><div class="g-cell filled-green"></div><div class="g-cell"></div><div class="g-cell"></div><div class="g-cell"></div><div class="g-cell filled-cyan"></div><div class="g-cell"></div>
+                      <!-- Row 3 -->
+                      <div class="g-cell filled-orange"></div><div class="g-cell filled-orange"></div><div class="g-cell"></div><div class="g-cell"></div><div class="g-cell"></div><div class="g-cell"></div><div class="g-cell"></div><div class="g-cell"></div>
+                      <!-- Row 4 -->
+                      <div class="g-cell filled-orange"></div><div class="g-cell filled-orange"></div><div class="g-cell"></div><div class="g-cell filled-green"></div><div class="g-cell filled-green"></div><div class="g-cell filled-green"></div><div class="g-cell"></div><div class="g-cell"></div>
+                      <!-- Row 5 -->
+                      <div class="g-cell"></div><div class="g-cell"></div><div class="g-cell"></div><div class="g-cell"></div><div class="g-cell filled-purple"></div><div class="g-cell filled-purple"></div><div class="g-cell"></div><div class="g-cell"></div>
+                      <!-- Row 6 -->
+                      <div class="g-cell filled-green"></div><div class="g-cell filled-green"></div><div class="g-cell filled-green"></div><div class="g-cell filled-green"></div><div class="g-cell filled-green"></div><div class="g-cell filled-green"></div><div class="g-cell filled-green"></div><div class="g-cell filled-green"></div>
+                      <!-- Row 7 -->
+                      <div class="g-cell"></div><div class="g-cell"></div><div class="g-cell filled-orange"></div><div class="g-cell filled-orange"></div><div class="g-cell"></div><div class="g-cell"></div><div class="g-cell"></div><div class="g-cell"></div>
+                      <!-- Row 8 -->
+                      <div class="g-cell"></div><div class="g-cell filled-cyan"></div><div class="g-cell filled-cyan"></div><div class="g-cell filled-cyan"></div><div class="g-cell"></div><div class="g-cell"></div><div class="g-cell filled-purple"></div><div class="g-cell filled-purple"></div>
+                    </div>
+
+                    <!-- Interactive Line Blast Trigger & Reset Button Bar -->
+                    <!-- Interactive Line Blast Trigger & Action Controls -->
+                    <div class="game-clear-interactive-bar">
+                      <button type="button" class="btn-mini-blast" id="btnTriggerBlast">
+                        <span>✨ Tap to Test Line Clear (+1,200)</span>
+                      </button>
+                    </div>
+
+                    <!-- Interactive Piece Dock (Click piece then tap board to place) -->
+                    <div class="game-dock" id="gamePieceDock">
+                      <div class="game-piece-preview selectable" data-shape="square" title="Click to select 2x2 block shape">
+                        <div class="piece-grid-2x2">
+                          <div></div><div></div><div></div><div></div>
+                        </div>
+                      </div>
+                      <div class="game-piece-preview selectable" data-shape="v-bar" title="Click to select 1x3 vertical bar">
+                        <div class="piece-grid-1x3">
+                          <div></div><div></div><div></div>
+                        </div>
+                      </div>
+                      <div class="game-piece-preview selectable" data-shape="h-bar" title="Click to select 3x1 horizontal bar">
+                        <div class="piece-grid-3x1">
+                          <div></div><div></div><div></div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="game-actions-bar">
+                      <button type="button" class="btn-game-action" id="btnShuffleDock" title="Generate new dock shapes">🎲 New Shapes</button>
+                      <button type="button" class="btn-game-action" id="btnResetBoard" title="Reset grid to initial state">🔄 Reset Board</button>
+                    </div>
+                  </div>
+
+                  <!-- Screen 2: High Scores / Leaderboard -->
+                  <div class="game-screen-content" data-screen-content="scores" style="display:none;">
+                    <div class="scores-panel">
+                      <div class="scores-header">Global Play Store Leaderboard</div>
+                      <div class="scores-list">
+                        <div class="score-row top-rank">
+                          <div class="rank-avatar">AR</div>
+                          <span class="rank-name">#1 Alex R.</span>
+                          <span class="rank-score">142,500 pts</span>
+                        </div>
+                        <div class="score-row">
+                          <div class="rank-avatar">DK</div>
+                          <span class="rank-name">#2 David K.</span>
+                          <span class="rank-score">118,200 pts</span>
+                        </div>
+                        <div class="score-row">
+                          <div class="rank-avatar">SM</div>
+                          <span class="rank-name">#3 Sarah M.</span>
+                          <span class="rank-score">94,000 pts</span>
+                        </div>
+                        <div class="score-row">
+                          <div class="rank-avatar">MB</div>
+                          <span class="rank-name">#4 Marcus B.</span>
+                          <span class="rank-score">88,450 pts</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Secondary Architecture Demos (Sample implementations) -->
+        <div class="secondary-projects-grid">
+          <div class="demo-card">
+            <div class="demo-card-header">
+              <span class="badge-secondary">Sample Architecture • Android</span>
+              <span class="demo-type">Concept / Demo</span>
+            </div>
+            <h4 class="demo-title">ApexRoute Dispatch Demo</h4>
+            <p class="demo-desc">
+              Sample architecture implementation showcasing offline GPS tracking, Bluetooth hardware scanner integration, and background WorkManager synchronization.
+            </p>
+            <div class="demo-tags">
+              <span class="proj-tag">Jetpack WorkManager</span>
+              <span class="proj-tag">Room DB</span>
+              <span class="proj-tag">Hardware APIs</span>
+            </div>
+          </div>
+
+          <div class="demo-card">
+            <div class="demo-card-header">
+              <span class="badge-secondary">Sample Architecture • Android</span>
+              <span class="demo-type">Concept / Demo</span>
+            </div>
+            <h4 class="demo-title">FinPulse Android Client Demo</h4>
+            <p class="demo-desc">
+              Sample architecture demonstration of biometric-authenticated personal finance interfaces featuring real-time state management and Android Keystore encryption.
+            </p>
+            <div class="demo-tags">
+              <span class="proj-tag">Android Keystore</span>
+              <span class="proj-tag">Biometrics</span>
+              <span class="proj-tag">Compose M3</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         ENGINEERING SECTION (#engineering)
+         ====================================================================== -->
+    <section id="engineering" class="section-pad engineering-section">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-label eng-label">ENGINEERING ARCHITECTURE</span>
+          <h2 class="section-title eng-title">Engineering Behind Every Release</h2>
+          <p class="section-subtitle eng-sub">
+            Every build passes through our strict architecture and automated pipeline ensuring stability, security, and top-tier Android Vitals.
+          </p>
+        </div>
+
+        <!-- Interactive Android Clean Architecture Diagram -->
+        <div class="arch-diagram-card">
+          <div class="arch-card-header">
+            <div class="arch-card-title">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="9" y1="21" x2="9" y2="9"/></svg>
+              <span>Android Clean Architecture (Unidirectional State Flow)</span>
+            </div>
+            <span class="arch-badge">INTERACTIVE ARCHITECTURE</span>
+          </div>
+
+          <div class="arch-flow-grid" id="archFlowGrid">
+            <div class="arch-layer-item active" data-arch-layer="ui" tabindex="0" role="button">
+              <div class="arch-layer-pill">UI LAYER</div>
+              <div class="arch-layer-tech">Jetpack Compose</div>
+              <div class="arch-layer-sub">Material 3 • 120 FPS</div>
+            </div>
+            <div class="arch-connector-arrow">↓</div>
+
+            <div class="arch-layer-item" data-arch-layer="state" tabindex="0" role="button">
+              <div class="arch-layer-pill">STATE LAYER</div>
+              <div class="arch-layer-tech">ViewModel / State</div>
+              <div class="arch-layer-sub">MVI Pattern • StateFlow</div>
+            </div>
+            <div class="arch-connector-arrow">↓</div>
+
+            <div class="arch-layer-item" data-arch-layer="domain" tabindex="0" role="button">
+              <div class="arch-layer-pill">DOMAIN LAYER</div>
+              <div class="arch-layer-tech">Domain UseCases</div>
+              <div class="arch-layer-sub">Pure Kotlin • Coroutines</div>
+            </div>
+            <div class="arch-connector-arrow">↓</div>
+
+            <div class="arch-layer-item" data-arch-layer="data" tabindex="0" role="button">
+              <div class="arch-layer-pill">DATA LAYER</div>
+              <div class="arch-layer-tech">Repository Layer</div>
+              <div class="arch-layer-sub">Offline-First Cache</div>
+            </div>
+            <div class="arch-connector-arrow">↓</div>
+
+            <div class="arch-layer-item" data-arch-layer="sources" tabindex="0" role="button">
+              <div class="arch-layer-pill">DATA SOURCES</div>
+              <div class="arch-layer-tech">Room DB &amp; REST APIs</div>
+              <div class="arch-layer-sub">Retrofit • Firebase</div>
+            </div>
+          </div>
+
+          <!-- Interactive Architecture Layer Detail Box -->
+          <div class="arch-interactive-detail" id="archDetailPanel">
+            <div class="arch-detail-header">
+              <span class="arch-detail-tag">LAYER SPECIFICATION: UI LAYER</span>
+              <span class="arch-detail-tech">Jetpack Compose + Material Design 3</span>
+            </div>
+            <p class="arch-detail-body">
+              Declarative UI architecture with immutable state inputs, unidirectional event hoisting, sub-millisecond gesture tracking, and native 120 FPS rendering consistency without WebView overhead.
+            </p>
+          </div>
+
+          <!-- Interactive Kotlin Code Spec Viewer (Android Studio IDE Aesthetic) -->
+          <div class="arch-kotlin-viewer" id="archKotlinViewer">
+            <div class="kotlin-tabs-bar" id="kotlinTabsBar">
+              <button type="button" class="kt-file-tab active" data-tab="ui"><span class="kt-tab-icon">K</span> GameScreen.kt</button>
+              <button type="button" class="kt-file-tab" data-tab="state"><span class="kt-tab-icon">K</span> GameViewModel.kt</button>
+              <button type="button" class="kt-file-tab" data-tab="domain"><span class="kt-tab-icon">K</span> ClearLinesUseCase.kt</button>
+              <button type="button" class="kt-file-tab" data-tab="data"><span class="kt-tab-icon">K</span> GameRepositoryImpl.kt</button>
+              <button type="button" class="kt-file-tab" data-tab="gradle"><span class="kt-tab-icon">G</span> build.gradle.kts</button>
+            </div>
+
+            <div class="kotlin-card-header">
+              <div class="kotlin-header-left">
+                <span class="kotlin-file-icon">K</span>
+                <span class="kotlin-filename" id="kotlinFilename">GameScreen.kt</span>
+                <span class="kotlin-badge" id="kotlinLayerBadge">Jetpack Compose UI</span>
+              </div>
+              <button type="button" class="btn-copy-code" id="btnCopyKotlinCode" title="Copy Kotlin Snippet">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+                <span id="copyCodeLabel">Copy Snippet</span>
+              </button>
+            </div>
+
+            <div class="kotlin-editor-container">
+              <div class="kotlin-line-numbers" id="kotlinLineNumbers">
+                1<br>2<br>3<br>4<br>5<br>6<br>7<br>8<br>9<br>10<br>11<br>12<br>13<br>14<br>15<br>16<br>17
+              </div>
+              <div class="kotlin-code-area">
+                <pre class="kotlin-pre"><code class="kotlin-code" id="kotlinCodeDisplay"><span class="kt-cmt">// UI Layer — Jetpack Compose &amp; Material Design 3</span>
+<span class="kt-ann">@Composable</span>
+<span class="kt-kw">fun</span> <span class="kt-fn">GameScreen</span>(
+    viewModel: <span class="kt-type">GameViewModel</span> = <span class="kt-fn">hiltViewModel</span>()
+) {
+    <span class="kt-kw">val</span> uiState <span class="kt-kw">by</span> viewModel.uiState.<span class="kt-fn">collectAsStateWithLifecycle</span>()
+
+    <span class="kt-fn">Scaffold</span>(
+        topBar = { <span class="kt-fn">GameTopBar</span>(score = uiState.score, combo = uiState.combo) },
+        containerColor = MaterialTheme.colorScheme.surface
+    ) { padding ->
+        <span class="kt-fn">GameBoardGrid</span>(
+            grid = uiState.grid,
+            modifier = Modifier.<span class="kt-fn">padding</span>(padding),
+            onCellClick = { row, col -> viewModel.<span class="kt-fn">onCellTapped</span>(row, col) }
+        )
+    }
+}</code></pre>
+              </div>
+            </div>
+
+            <div class="kotlin-editor-footer">
+              <div class="kt-footer-info">
+                <span>Kotlin 2.0.20</span> • <span>JVM 21</span> • <span style="color:#34D399;">● Robolectric &amp; Vitals Passed</span>
+              </div>
+              <button type="button" class="btn-verify-specs" id="btnVerifySpecs" title="Run Automated Specs Simulation">
+                <span>▶ Run Verification</span>
+              </button>
+            </div>
+          </div>
+
+          <div class="arch-tags-row">
+            <span class="arch-tag">Kotlin 2.0</span>
+            <span class="arch-tag">Jetpack Compose</span>
+            <span class="arch-tag">MVI Architecture</span>
+            <span class="arch-tag">Room DB</span>
+            <span class="arch-tag">Kotlin Coroutines</span>
+            <span class="arch-tag">Firebase</span>
+            <span class="arch-tag">REST APIs</span>
+          </div>
+        </div>
+
+        <!-- CI/CD Technical Pipeline Visual -->
+        <div class="eng-pipeline-flow">
+          <div class="eng-step-item">
+            <div class="eng-step-circle">01</div>
+            <div class="eng-step-name">BUILD</div>
+            <div class="eng-step-sub">Gradle + Kotlin K2</div>
+          </div>
+          <div class="eng-arrow">→</div>
+
+          <div class="eng-step-item">
+            <div class="eng-step-circle">02</div>
+            <div class="eng-step-name">TEST</div>
+            <div class="eng-step-sub">Robolectric &amp; Unit</div>
+          </div>
+          <div class="eng-arrow">→</div>
+
+          <div class="eng-step-item">
+            <div class="eng-step-circle">03</div>
+            <div class="eng-step-name">OPTIMIZE</div>
+            <div class="eng-step-sub">R8 Minify &amp; Baselines</div>
+          </div>
+          <div class="eng-arrow">→</div>
+
+          <div class="eng-step-item">
+            <div class="eng-step-circle">04</div>
+            <div class="eng-step-name">VERIFY</div>
+            <div class="eng-step-sub">Firebase Test Matrix</div>
+          </div>
+          <div class="eng-arrow">→</div>
+
+          <div class="eng-step-item">
+            <div class="eng-step-circle">05</div>
+            <div class="eng-step-name">RELEASE</div>
+            <div class="eng-step-sub">Play Staged Rollout</div>
+          </div>
+        </div>
+
+        <!-- Architecture Benchmark Comparison Matrix -->
+        <div class="eng-comparison-card">
+          <div class="eng-comp-header">
+            <div class="eng-comp-title">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="comp-icon"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+              <span>Android Performance Benchmarks</span>
+            </div>
+            <span class="eng-telemetry-badge">Real Device Telemetry</span>
+          </div>
+
+          <div class="eng-comp-grid">
+            <div class="comp-item">
+              <div class="comp-metric-name">Cold Start Latency</div>
+              <div class="comp-bar-row">
+                <div class="comp-stat-badge native">
+                  <span>Appfinity (Native Baseline)</span>
+                  <span class="comp-val">&lt; 380 ms</span>
+                </div>
+                <div class="comp-stat-badge generic">
+                  <span>Unoptimized Apps</span>
+                  <span class="comp-val">1,800+ ms</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="comp-item">
+              <div class="comp-metric-name">AAB Package Optimization</div>
+              <div class="comp-bar-row">
+                <div class="comp-stat-badge native">
+                  <span>Appfinity (R8 ProGuard)</span>
+                  <span class="comp-val">-40% to -65% Size</span>
+                </div>
+                <div class="comp-stat-badge generic">
+                  <span>Unminified Builds</span>
+                  <span class="comp-val">Heavy Fat APKs</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="comp-item">
+              <div class="comp-metric-name">UI Rendering Consistency</div>
+              <div class="comp-bar-row">
+                <div class="comp-stat-badge native">
+                  <span>Compose (60/120 FPS)</span>
+                  <span class="comp-val">&lt; 8.3ms Frame</span>
+                </div>
+                <div class="comp-stat-badge generic">
+                  <span>Janky WebViews</span>
+                  <span class="comp-val">Frequent Drops</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="comp-item">
+              <div class="comp-metric-name">Crash-Free Sessions</div>
+              <div class="comp-bar-row">
+                <div class="comp-stat-badge native">
+                  <span>Play Vitals Target</span>
+                  <span class="comp-val">&gt; 99.9% Crash-Free</span>
+                </div>
+                <div class="comp-stat-badge generic">
+                  <span>Industry Bad Threshold</span>
+                  <span class="comp-val">&lt; 98.0%</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Metric Cards Grid -->
+        <div class="eng-metrics-grid">
+          <div class="eng-metric-card">
+            <div class="eng-m-value">120 FPS</div>
+            <div class="eng-m-title">Rendering Target</div>
+            <div class="eng-m-desc">Sub-8ms frame time with Compose</div>
+          </div>
+
+          <div class="eng-metric-card">
+            <div class="eng-m-value">&gt; 99.9%</div>
+            <div class="eng-m-title">Session Stability</div>
+            <div class="eng-m-desc">Crash-free production sessions</div>
+          </div>
+
+          <div class="eng-metric-card">
+            <div class="eng-m-value">API 26–35</div>
+            <div class="eng-m-title">Compatibility</div>
+            <div class="eng-m-desc">Active Android OS fragmentation</div>
+          </div>
+
+          <div class="eng-metric-card">
+            <div class="eng-m-value">Keystore</div>
+            <div class="eng-m-title">Hardware Security</div>
+            <div class="eng-m-desc">Hardware-backed encryption</div>
+          </div>
+
+          <div class="eng-metric-card">
+            <div class="eng-m-value">&lt; 380ms</div>
+            <div class="eng-m-title">Cold Startup</div>
+            <div class="eng-m-desc">Precompiled baseline profiles</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         DEVELOPMENT PROCESS (#process)
+         ====================================================================== -->
+    <section id="process" class="section-pad process-section">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-label">METHODOLOGY</span>
+          <h2 class="section-title">From Idea to Production</h2>
+          <p class="section-subtitle">
+            A disciplined seven-step lifecycle engineered to ship high-standard Android software smoothly and predictably. Click any step to inspect deliverables.
+          </p>
+        </div>
+
+        <!-- Connected Interactive Process Timeline -->
+        <div class="timeline-container">
+          <div class="timeline-progress-track" aria-hidden="true"></div>
+          <div class="timeline-horizontal">
+            <!-- Step 1 -->
+            <div class="timeline-node-card active" data-step="1" tabindex="0" role="button" aria-label="Step 01 Discover">
+              <div class="timeline-step-badge">01</div>
+              <h4 class="t-node-title">Discover</h4>
+              <p class="t-node-desc">Analyze product requirements, target audience, and Android platform capabilities.</p>
+            </div>
+
+            <!-- Step 2 -->
+            <div class="timeline-node-card" data-step="2" tabindex="0" role="button" aria-label="Step 02 Plan">
+              <div class="timeline-step-badge">02</div>
+              <h4 class="t-node-title">Plan</h4>
+              <p class="t-node-desc">Technical architecture, data schemas, API contracts, and Gradle module boundaries.</p>
+            </div>
+
+            <!-- Step 3 -->
+            <div class="timeline-node-card" data-step="3" tabindex="0" role="button" aria-label="Step 03 Design">
+              <div class="timeline-step-badge">03</div>
+              <h4 class="t-node-title">Design</h4>
+              <p class="t-node-desc">Material 3 UI components, ergonomic touch layouts, and responsive flow prototypes.</p>
+            </div>
+
+            <!-- Step 4 -->
+            <div class="timeline-node-card" data-step="4" tabindex="0" role="button" aria-label="Step 04 Develop">
+              <div class="timeline-step-badge">04</div>
+              <h4 class="t-node-title">Develop</h4>
+              <p class="t-node-desc">Clean Kotlin 2.0, Jetpack Compose, Room persistence, and Coroutines pipelines.</p>
+            </div>
+
+            <!-- Step 5 -->
+            <div class="timeline-node-card" data-step="5" tabindex="0" role="button" aria-label="Step 05 Test">
+              <div class="timeline-step-badge">05</div>
+              <h4 class="t-node-title">Test</h4>
+              <p class="t-node-desc">Robolectric unit suites, memory leak audits, and physical Android matrix tests.</p>
+            </div>
+
+            <!-- Step 6 -->
+            <div class="timeline-node-card" data-step="6" tabindex="0" role="button" aria-label="Step 06 Launch">
+              <div class="timeline-step-badge">06</div>
+              <h4 class="t-node-title">Launch</h4>
+              <p class="t-node-desc">Google Play Console signing, staged percentage rollouts, and store optimization.</p>
+            </div>
+
+            <!-- Step 7 -->
+            <div class="timeline-node-card" data-step="7" tabindex="0" role="button" aria-label="Step 07 Improve">
+              <div class="timeline-step-badge">07</div>
+              <h4 class="t-node-title">Improve</h4>
+              <p class="t-node-desc">Android Vitals tracking, performance profiling, and continuous product releases.</p>
+            </div>
+          </div>
+
+          <!-- Interactive Process Detail Box -->
+          <div class="process-detail-card" id="processDetailCard">
+            <div class="p-detail-badge">PHASE 01 DELIVERABLES</div>
+            <h3 class="p-detail-title">Discover &amp; Technical Discovery</h3>
+            <p class="p-detail-desc">
+              We define clear project scope, evaluate native Android hardware APIs, outline Gradle module boundaries, and establish target SDK compatibility matrices before writing production code.
+            </p>
+            <div class="p-detail-tags">
+              <span class="p-tag">✓ Scope Document</span>
+              <span class="p-tag">✓ SDK Target Matrix</span>
+              <span class="p-tag">✓ Feasibility Audit</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         WHY APPFINITY SECTION
+         ====================================================================== -->
+    <section class="section-pad why-section">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-label">STUDIO VALUES</span>
+          <h2 class="section-title">Why Appfinity Technologies?</h2>
+          <p class="section-subtitle">
+            We are purpose-built to deliver deep Android expertise without the dilution of multi-discipline agencies.
+          </p>
+        </div>
+
+        <div class="why-editorial-grid">
+          <div class="why-editorial-item">
+            <span class="why-num">01 / SPECIALIZATION</span>
+            <h3 class="why-title">Android Focused</h3>
+            <p class="why-desc">
+              We specialize strictly in the Android operating system. Our toolchains, best practices, and engineering culture are honed exclusively for Google's Android ecosystem.
+            </p>
+          </div>
+
+          <div class="why-editorial-item">
+            <span class="why-num">02 / DISCIPLINE</span>
+            <h3 class="why-title">Production Mindset</h3>
+            <p class="why-desc">
+              We build software prepared for real consumer scale from day one — prioritizing battery efficiency, offline network resilience, and defensive error handling.
+            </p>
+          </div>
+
+          <div class="why-editorial-item">
+            <span class="why-num">03 / INTERFACE</span>
+            <h3 class="why-title">Performance First</h3>
+            <p class="why-desc">
+              Every millisecond counts. We optimize cold-start delays, jank rates, memory footprint, and frame rates to guarantee an authentic 120 FPS native experience.
+            </p>
+          </div>
+
+          <div class="why-editorial-item">
+            <span class="why-num">04 / LONGEVITY</span>
+            <h3 class="why-title">Long-Term Engineering</h3>
+            <p class="why-desc">
+              Clean modular codebases built with modular Gradle configurations, Clean Architecture, and Jetpack libraries that your internal engineering team can easily maintain and scale.
+            </p>
+          </div>
+
+          <div class="why-editorial-item">
+            <span class="why-num">05 / TRANSPARENCY</span>
+            <h3 class="why-title">Transparent Process</h3>
+            <p class="why-desc">
+              Direct access to engineers, clear milestone checkpoints, structured weekly APK/AAB demo builds, and transparent code reviews.
+            </p>
+          </div>
+
+          <div class="why-editorial-item">
+            <span class="why-num">06 / QUALITY</span>
+            <h3 class="why-title">Google Play Standard</h3>
+            <p class="why-desc">
+              From privacy manifest compliance to Play Console policy clearance and Android Vitals telemetry monitoring, our work is engineered for production approval.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         CLIENT TESTIMONIALS & PRODUCTION METRICS
+         ====================================================================== -->
+    <section class="section-pad testimonials-section" aria-label="Client Testimonials">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-label">PRODUCTION IMPACT</span>
+          <h2 class="section-title">Engineered for Ambitious Teams</h2>
+          <p class="section-subtitle">
+            How founders, engineering leaders, and product teams experience shipping native Android software with Appfinity Technologies.
+          </p>
+        </div>
+
+        <div class="testimonials-carousel-wrap">
+          <div class="testimonials-track" id="testimonialsTrack">
+            <!-- Testimonial 1 -->
+            <div class="testi-card">
+              <div class="testi-top">
+                <div class="testi-stars">★★★★★</div>
+                <span class="testi-badge">Google Play • 100K+ Users</span>
+              </div>
+              <p class="testi-quote">
+                "Appfinity's command of native Kotlin and Jetpack Compose is second to none. They took our puzzle game concept from prototype to a 4.8-star Play Store release in 7 weeks. Frame drops are non-existent, even on budget Android chipsets."
+              </p>
+              <div class="testi-author-row">
+                <div class="testi-avatar">EK</div>
+                <div>
+                  <div class="testi-name">Elena Kostas</div>
+                  <div class="testi-role">Head of Product, Gamefinity Studio</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Testimonial 2 -->
+            <div class="testi-card">
+              <div class="testi-top">
+                <div class="testi-stars">★★★★★</div>
+                <span class="testi-badge">Enterprise • FinTech</span>
+              </div>
+              <p class="testi-quote">
+                "Migrating our legacy XML Android app with 150K lines of code to Jetpack Compose seemed daunting. Appfinity architected a zero-downtime modular migration with Clean Architecture and strict Coroutines. Our cold startup improved by 62%."
+              </p>
+              <div class="testi-author-row">
+                <div class="testi-avatar">MR</div>
+                <div>
+                  <div class="testi-name">Marcus Vance</div>
+                  <div class="testi-role">VP of Engineering, FinPulse Mobile</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Testimonial 3 -->
+            <div class="testi-card">
+              <div class="testi-top">
+                <div class="testi-stars">★★★★★</div>
+                <span class="testi-badge">Logistics • Hardware BLE</span>
+              </div>
+              <p class="testi-quote">
+                "Finding an engineering studio that understands hardware-backed Android Keystore, WorkManager background workers, and BLE scanner integration was rare until we partnered with Appfinity. Reliable, transparent, and prompt weekly builds."
+              </p>
+              <div class="testi-author-row">
+                <div class="testi-avatar">TK</div>
+                <div>
+                  <div class="testi-name">Tariq Khan</div>
+                  <div class="testi-role">Technical Director, ApexRoute</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="testi-nav-bar">
+            <button type="button" class="btn-testi-arrow" id="btnTestiPrev" aria-label="Previous Review">←</button>
+            <div class="testi-dots" id="testiDots">
+              <div class="testi-dot active" data-index="0"></div>
+              <div class="testi-dot" data-index="1"></div>
+            </div>
+            <button type="button" class="btn-testi-arrow" id="btnTestiNext" aria-label="Next Review">→</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         FREQUENTLY ASKED QUESTIONS (#faq)
+         ====================================================================== -->
+    <section id="faq" class="section-pad faq-section" aria-label="Frequently Asked Questions">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-label">CLIENT QUESTIONS</span>
+          <h2 class="section-title">Frequently Asked Questions</h2>
+          <p class="section-subtitle">
+            Clear answers about our engineering methodology, intellectual property rights, Google Play releases, and sprint workflows.
+          </p>
+        </div>
+
+        <div class="faq-grid" id="faqAccordion">
+          <!-- Question 1 -->
+          <div class="faq-item">
+            <button type="button" class="faq-trigger" aria-expanded="false">
+              <span>Do we own 100% of the Kotlin source code and intellectual property?</span>
+              <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+            </button>
+            <div class="faq-content-wrap">
+              <div class="faq-content-inner">
+                <p class="faq-answer-body">
+                  Yes, absolutely. Upon final milestone clearance, you retain 100% full intellectual property and commercial ownership. We hand over the complete Git repository, multi-module Gradle configuration, automated test suites, CI/CD deployment scripts, and Google Play signing keys.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Question 2 -->
+          <div class="faq-item">
+            <button type="button" class="faq-trigger" aria-expanded="false">
+              <span>How do you handle Google Play Store policy review and approval?</span>
+              <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+            </button>
+            <div class="faq-content-wrap">
+              <div class="faq-content-inner">
+                <p class="faq-answer-body">
+                  We handle end-to-end Google Play Console compliance. This includes Play App Signing, data safety privacy declarations, target SDK API level compliance (API 35/Android 15), permission minimization audits, store listing asset specifications, and staged percentage rollouts to guarantee zero rejection risks.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Question 3 -->
+          <div class="faq-item">
+            <button type="button" class="faq-trigger" aria-expanded="false">
+              <span>Can you migrate our legacy XML-based Android app to Jetpack Compose?</span>
+              <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+            </button>
+            <div class="faq-content-wrap">
+              <div class="faq-content-inner">
+                <p class="faq-answer-body">
+                  Yes. We specialize in seamless, non-breaking incremental migrations. Using ComposeView interoperability, we refactor high-impact screens first while preserving existing legacy business logic, followed by ViewModel state hoisting and Room database optimization. Your production app stays live throughout the migration.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Question 4 -->
+          <div class="faq-item">
+            <button type="button" class="faq-trigger" aria-expanded="false">
+              <span>What is your typical sprint cadence and delivery schedule?</span>
+              <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+            </button>
+            <div class="faq-content-wrap">
+              <div class="faq-content-inner">
+                <p class="faq-answer-body">
+                  We operate in disciplined two-week engineering sprints. Every Friday, your team receives a testable APK/AAB build distributed via Google Play Internal App Sharing or Firebase App Distribution, accompanied by a sprint progress report, benchmark telemetry, and an open feedback channel.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Question 5 -->
+          <div class="faq-item">
+            <button type="button" class="faq-trigger" aria-expanded="false">
+              <span>Which physical Android devices and chipsets do you test on?</span>
+              <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+            </button>
+            <div class="faq-content-wrap">
+              <div class="faq-content-inner">
+                <p class="faq-answer-body">
+                  We verify builds across a strict physical device lab including Google Pixel (stock Android), Samsung Galaxy (One UI), OnePlus (OxygenOS), and Xiaomi (MIUI/HyperOS), covering chipsets from Qualcomm Snapdragon, MediaTek, and Google Tensor to ensure consistent performance across screen ratios and RAM configurations.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Question 6 -->
+          <div class="faq-item">
+            <button type="button" class="faq-trigger" aria-expanded="false">
+              <span>Do you provide post-launch maintenance and Android Vitals SLA?</span>
+              <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+            </button>
+            <div class="faq-content-wrap">
+              <div class="faq-content-inner">
+                <p class="faq-answer-body">
+                  Yes. All project deliveries include a 30-day post-launch warranty with zero-cost bug fixes. We also offer dedicated ongoing SLA retainers covering annual Android OS target SDK updates, continuous Android Vitals monitoring (>99.9% crash-free guarantee), and proactive feature iterations.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         ANDROID FOCUS BRAND STATEMENT
+         ====================================================================== -->
+    <section class="focus-section" aria-label="Brand Focus">
+      <div class="container">
+        <div class="focus-inner">
+          <span class="section-label">OUR POSITIONING</span>
+          <h2 class="focus-heading">
+            Android is not one of our services.<br>
+            <span class="highlight-green">It is our focus.</span>
+          </h2>
+          <div class="focus-line" aria-hidden="true"></div>
+          <p class="focus-desc">
+            By staying dedicated to Android, we concentrate on creating superior mobile experiences, stronger engineering foundations, and reliable production applications.
+          </p>
+          <a href="#contact" class="btn btn-hero-primary">
+            <span>Partner with Our Android Engineers</span>
+            <svg class="btn-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         FINAL CTA SECTION
+         ====================================================================== -->
+    <section class="final-cta-section" aria-label="Call to Action">
+      <div class="container">
+        <div class="cta-box">
+          <div class="cta-ambient" aria-hidden="true"></div>
+          <div class="cta-inner">
+            <h2 class="cta-title">Have an Android Product in Mind?</h2>
+            <p class="cta-desc">
+              Tell us what you're building. We'll help turn the idea into a production-ready Android product.
+            </p>
+            <div class="cta-buttons-row">
+              <a href="#contact" class="btn btn-hero-primary">
+                <span>Start a Project</span>
+                <svg class="btn-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <line x1="5" y1="12" x2="19" y2="12"></line>
+                  <polyline points="12 5 19 12 12 19"></polyline>
+                </svg>
+              </a>
+              <a href="#contact" class="btn btn-cta-outline">
+                Discuss Your Architecture
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         CONTACT SECTION (#contact)
+         ====================================================================== -->
+    <section id="contact" class="section-pad contact-section">
+      <div class="container">
+        <!-- Interactive Project Scope & Timeline Estimator -->
+        <div class="estimator-card" id="projectEstimator" style="margin-bottom: 48px;">
+          <div class="estimator-header">
+            <span class="section-label">INTERACTIVE SCOPE BUILDER</span>
+            <h3 style="font-size: 20px; font-weight: 800; color: var(--text-primary); margin-top: 4px;">Android Architecture, Timeline &amp; Cost Estimator</h3>
+            <p style="font-size: 13.5px; color: var(--text-secondary); margin-top: 4px;">Select your platform targets, project scope, and native hardware requirements below to compute estimated sprints, Gradle module boundaries, and investment tier.</p>
+          </div>
+
+          <div class="estimator-steps-grid">
+            <!-- Step 1: Form Factor -->
+            <div class="estimator-step-col">
+              <div class="est-step-title">
+                <span>01 / Form Factor</span>
+                <span class="est-step-badge">Platform</span>
+              </div>
+              <div class="est-options-list" id="estPlatformList">
+                <button type="button" class="est-opt-btn active" data-factor="phone" data-title="Phone &amp; Foldable">
+                  <div>
+                    <div class="est-opt-label">Phone &amp; Foldable</div>
+                    <div class="est-opt-sub">Adaptive Material 3 Layouts</div>
+                  </div>
+                  <div class="est-opt-check">✓</div>
+                </button>
+                <button type="button" class="est-opt-btn" data-factor="tablet" data-title="Tablet &amp; Large Screen">
+                  <div>
+                    <div class="est-opt-label">Tablet &amp; Large Screen</div>
+                    <div class="est-opt-sub">NavigationRail &amp; Multi-Pane</div>
+                  </div>
+                  <div class="est-opt-check">✓</div>
+                </button>
+                <button type="button" class="est-opt-btn" data-factor="wear" data-title="Wear OS Watch">
+                  <div>
+                    <div class="est-opt-label">Wear OS Watch Companion</div>
+                    <div class="est-opt-sub">Compose for Wear OS Tiles</div>
+                  </div>
+                  <div class="est-opt-check">✓</div>
+                </button>
+              </div>
+            </div>
+
+            <!-- Step 2: Architecture Scope -->
+            <div class="estimator-step-col">
+              <div class="est-step-title">
+                <span>02 / Project Type</span>
+                <span class="est-step-badge">Scope</span>
+              </div>
+              <div class="est-options-list" id="estScopeList">
+                <button type="button" class="est-opt-btn active" data-scope="greenfield" data-weeks="6–8 Weeks" data-budget="$25,000 – $50,000" data-arch=":core:designsystem, :core:database, :feature:main">
+                  <div>
+                    <div class="est-opt-label">Greenfield 0-to-1 MVP</div>
+                    <div class="est-opt-sub">Complete native app release</div>
+                  </div>
+                  <div class="est-opt-check">✓</div>
+                </button>
+                <button type="button" class="est-opt-btn" data-scope="migration" data-weeks="3–5 Weeks" data-budget="$15,000 – $30,000" data-arch=":core:compose-m3, :feature:refactored">
+                  <div>
+                    <div class="est-opt-label">Compose Migration</div>
+                    <div class="est-opt-sub">XML views to Jetpack Compose</div>
+                  </div>
+                  <div class="est-opt-check">✓</div>
+                </button>
+                <button type="button" class="est-opt-btn" data-scope="vitals" data-weeks="2–3 Weeks" data-budget="$10,000 – $20,000" data-arch=":benchmark, :baseline-profile, R8">
+                  <div>
+                    <div class="est-opt-label">Vitals &amp; Optimization</div>
+                    <div class="est-opt-sub">Sub-380ms cold start &amp; R8</div>
+                  </div>
+                  <div class="est-opt-check">✓</div>
+                </button>
+              </div>
+            </div>
+
+            <!-- Step 3: Hardware & Cloud APIs -->
+            <div class="estimator-step-col">
+              <div class="est-step-title">
+                <span>03 / Capabilities</span>
+                <span class="est-step-badge">Modules</span>
+              </div>
+              <div class="est-options-list" id="estCapsList">
+                <button type="button" class="est-opt-btn active" data-cap="room" data-title="Room SQLite Offline-First">
+                  <div>
+                    <div class="est-opt-label">Offline Room SQLite</div>
+                    <div class="est-opt-sub">StateFlow local caching</div>
+                  </div>
+                  <div class="est-opt-check">✓</div>
+                </button>
+                <button type="button" class="est-opt-btn" data-cap="keystore" data-title="Biometrics &amp; Keystore">
+                  <div>
+                    <div class="est-opt-label">Biometrics &amp; Keystore</div>
+                    <div class="est-opt-sub">Hardware-backed security</div>
+                  </div>
+                  <div class="est-opt-check">✓</div>
+                </button>
+                <button type="button" class="est-opt-btn" data-cap="cloud" data-title="FCM &amp; REST / gRPC API">
+                  <div>
+                    <div class="est-opt-label">FCM Push &amp; Cloud Sync</div>
+                    <div class="est-opt-sub">WorkManager background sync</div>
+                  </div>
+                  <div class="est-opt-check">✓</div>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Dynamic Result Banner -->
+          <div class="estimator-result-banner">
+            <div class="est-result-metrics">
+              <div class="est-metric-item">
+                <span class="est-m-label">ESTIMATED DELIVERY</span>
+                <span class="est-m-val accent" id="estResultWeeks">~6–8 Weeks</span>
+              </div>
+              <div class="est-metric-item">
+                <span class="est-m-label">ESTIMATED BUDGET</span>
+                <span class="est-m-val" id="estResultBudget">$25,000 – $50,000</span>
+              </div>
+              <div class="est-metric-item">
+                <span class="est-m-label">RECOMMENDED ARCHITECTURE</span>
+                <span class="est-m-val" id="estResultArch" style="font-size:13px; font-family:var(--font-mono); font-weight:600;">:core:designsystem, :core:database, :feature:main</span>
+              </div>
+            </div>
+            <button type="button" class="btn-est-apply" id="btnApplyEstimator">
+              <span>📋 Apply Scope to Brief ↓</span>
+            </button>
+          </div>
+        </div>
+
+        <div class="contact-grid">
+          <!-- Info Column -->
+          <div class="contact-info-col">
+            <span class="section-label">PROJECT INTAKE</span>
+            <h2 class="section-title">Have an Android Product in Mind?</h2>
+            <p class="contact-lead">
+              Tell us what you're building. We'll help turn the idea into a production-ready Android product. Send a request through the form or email our engineering studio directly.
+            </p>
+
+            <!-- Direct Official Email Contact Card -->
+            <div class="direct-email-card">
+              <div class="direct-email-header">
+                <span class="direct-email-label">DIRECT ENGINEERING INBOX</span>
+                <span class="badge-secondary">Primary Contact</span>
+              </div>
+              <div class="direct-email-val">
+                <a href="mailto:appfinitytechnologies@gmail.com" id="emailText">appfinitytechnologies@gmail.com</a>
+                <div class="email-actions-row">
+                  <button type="button" class="btn-copy-email" id="btnCopyEmail" title="Copy email address" aria-label="Copy email address">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                      <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                    </svg>
+                    <span id="copyBtnLabel">Copy</span>
+                  </button>
+                  <a href="mailto:appfinitytechnologies@gmail.com" class="btn-open-email">
+                    Open Mail →
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <ul class="contact-perks-list">
+              <li class="contact-perk">
+                <div class="perk-icon-wrap">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                </div>
+                <span>Direct consultation with lead Android engineers</span>
+              </li>
+              <li class="contact-perk">
+                <div class="perk-icon-wrap">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                </div>
+                <span>Technical architecture, timeline &amp; budget estimation</span>
+              </li>
+              <li class="contact-perk">
+                <div class="perk-icon-wrap">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                </div>
+                <span>Strict NDA &amp; complete intellectual property protection</span>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Contact Form Card -->
+          <div class="contact-form-card">
+            <form id="projectContactForm" novalidate>
+              <!-- Interactive Scope Chips with Live Timeline Estimate -->
+              <div class="form-scope-wrap">
+                <div class="scope-chips-header">
+                  <label class="form-label" style="margin-bottom:0;">Project Scope</label>
+                  <span class="timeline-estimate-tag" id="scopeEstimateTag">Est: ~6–8 Weeks to Play Store</span>
+                </div>
+                <div class="chip-select-group" id="scopeChipGroup">
+                  <button type="button" class="chip-option selected" data-value="new-app" data-estimate="Est: ~6–8 Weeks to Play Store">New Android App</button>
+                  <button type="button" class="chip-option" data-value="existing-app" data-estimate="Est: ~3–5 Weeks Overhaul">App Modernization</button>
+                  <button type="button" class="chip-option" data-value="compose-migration" data-estimate="Est: ~2–4 Weeks Migration">Compose Migration</button>
+                  <button type="button" class="chip-option" data-value="performance" data-estimate="Est: ~1–2 Weeks Optimization">Performance &amp; Vitals</button>
+                  <button type="button" class="chip-option" data-value="game-app" data-estimate="Est: ~8–12 Weeks Production">Android Game</button>
+                </div>
+                <input type="hidden" id="projectType" name="projectType" value="new-app">
+              </div>
+
+              <div class="form-group-row">
+                <div class="form-group">
+                  <label for="userName" class="form-label">Full Name *</label>
+                  <input type="text" id="userName" class="form-input" placeholder="e.g. Alex Morgan" required>
+                </div>
+                <div class="form-group">
+                  <label for="userEmail" class="form-label">Work Email *</label>
+                  <input type="email" id="userEmail" class="form-input" placeholder="alex@company.com" required>
+                </div>
+              </div>
+
+              <div class="form-group-row">
+                <div class="form-group">
+                  <label for="userCompany" class="form-label">Company Name</label>
+                  <input type="text" id="userCompany" class="form-input" placeholder="Company or Studio">
+                </div>
+                <div class="form-group">
+                  <label for="budgetRange" class="form-label">Estimated Budget</label>
+                  <select id="budgetRange" class="form-select">
+                    <option value="10k-25k">$10,000 – $25,000</option>
+                    <option value="25k-50k" selected>$25,000 – $50,000</option>
+                    <option value="50k-100k">$50,000 – $100,000</option>
+                    <option value="100k+">$100,000+</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <div class="form-textarea-header">
+                  <label for="projectDetails" class="form-label" style="margin-bottom:0;">Project Details *</label>
+                  <span class="char-counter" id="charCounter">0 / 500</span>
+                </div>
+                <!-- Fast Specification Helper Chips -->
+                <div class="prompt-chips-row" id="formPromptChips">
+                  <span class="prompt-chip" data-append="• Greenfield MVP architecture (Clean Kotlin + Jetpack Compose)">+ Greenfield Architecture</span>
+                  <span class="prompt-chip" data-append="• Legacy XML views to Jetpack Compose Material 3 migration">+ Compose Migration</span>
+                  <span class="prompt-chip" data-append="• Google Play Store production release &amp; Android Vitals audit">+ Play Store Launch</span>
+                  <span class="prompt-chip" data-append="• Offline-first SQLite persistence &amp; Coroutines sync">+ Offline Room DB</span>
+                </div>
+                <textarea id="projectDetails" class="form-textarea" rows="4" placeholder="Tell us what you're building, target timeline, and goals for your Android application..." required></textarea>
+              </div>
+
+              <button type="submit" class="btn btn-hero-primary btn-submit-form">
+                <span>Start the Conversation →</span>
+              </button>
+
+              <!-- Inline Success Notification -->
+              <div id="formSuccessBox" class="form-success-box" role="alert">
+                <div class="success-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                </div>
+                <div class="success-text">
+                  <h4 class="success-title">Thank You! Request Received</h4>
+                  <p class="success-desc">
+                    Our Android engineering team will review your project details and reach out at <strong>appfinitytechnologies@gmail.com</strong> within 24 hours.
+                  </p>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ========================================================================
+       FOOTER
+       ======================================================================== -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <div class="brand-logo">
+            <div class="brand-icon-box">
+              <svg viewBox="0 0 24 24" fill="currentColor">
+                <path d="M17.5 15.5c-.55 0-1-.45-1-1s.45-1 1-1 1 .45 1 1-.45 1-1 1m-11 0c-.55 0-1-.45-1-1s.45-1 1-1 1 .45 1 1-.45 1-1 1m11.4-6l2-3.46c.11-.19.04-.44-.15-.55a.42.42 0 00-.57.15l-2.02 3.5c-1.56-.54-3.3-.84-5.16-.84s-3.6.3-5.16.84L4.84 5.64a.42.42 0 00-.57-.15c-.19.11-.26.36-.15.55l2 3.46C2.69 11.36.34 14.83 0 18.92h24c-.34-4.09-2.69-7.56-6.1-9.42"/>
+              </svg>
+            </div>
+            <div class="brand-text-wrap">
+              <span class="brand-title">Appfinity</span>
+              <span class="brand-sub">Technologies</span>
+            </div>
+          </div>
+          <p class="footer-brand-desc">
+            Android engineering studio for products built to last. We build modern, reliable, and production-ready Android applications.
+          </p>
+          <a href="mailto:appfinitytechnologies@gmail.com" class="footer-email-link">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="footer-mail-svg"><rect x="2" y="4" width="20" height="16" rx="2"></rect><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path></svg>
+            <span>appfinitytechnologies@gmail.com</span>
+          </a>
+        </div>
+
+        <div class="footer-nav-group">
+          <h4 class="footer-heading">Navigation</h4>
+          <ul class="footer-nav-list">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#work">Work</a></li>
+            <li><a href="#engineering">Engineering</a></li>
+            <li><a href="#process">Process</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div class="footer-copy">
+          © <span id="currentYear">2026</span> Appfinity Technologies. All rights reserved.
+        </div>
+        <div class="footer-legal-links">
+          <a href="#home">Privacy Policy</a>
+          <span class="legal-sep">•</span>
+          <a href="#home">Terms of Service</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Floating Back to Top Button -->
+  <button class="back-to-top-btn" aria-label="Back to Top">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+      <line x1="12" y1="19" x2="12" y2="5"></line>
+      <polyline points="5 12 12 5 19 12"></polyline>
+    </svg>
+  </button>
+
+  <!-- ========================================================================
+       COMMAND PALETTE MODAL (Ctrl+K / ⌘K)
+       ======================================================================== -->
+  <div class="command-palette-backdrop" id="commandPaletteModal" aria-hidden="true">
+    <div class="command-palette-card" role="dialog" aria-modal="true" aria-label="Studio Command Palette">
+      <div class="cmd-input-wrap">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="cmd-search-icon"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+        <input type="text" class="cmd-search-input" id="cmdSearchInput" placeholder="Type a section or action (or use ↑ ↓ to navigate)..." autocomplete="off">
+        <kbd class="cmd-esc-tag">ESC</kbd>
+      </div>
+
+      <div class="cmd-list-wrap">
+        <div class="cmd-group-label">NAVIGATION</div>
+        <div class="cmd-list" id="cmdNavList">
+          <div class="cmd-item active" data-action="navigate" data-target="#home" tabindex="0">
+            <span class="cmd-item-icon">🏠</span>
+            <div class="cmd-item-text">
+              <div class="cmd-item-title">Home</div>
+              <div class="cmd-item-sub">Studio overview &amp; flagship device mockup</div>
+            </div>
+            <span class="cmd-item-badge">#home</span>
+          </div>
+
+          <div class="cmd-item" data-action="navigate" data-target="#about" tabindex="0">
+            <span class="cmd-item-icon">🏢</span>
+            <div class="cmd-item-text">
+              <div class="cmd-item-title">About Studio &amp; Delivery System</div>
+              <div class="cmd-item-sub">Engineering principles &amp; 7-step delivery pipeline</div>
+            </div>
+            <span class="cmd-item-badge">#about</span>
+          </div>
+
+          <div class="cmd-item" data-action="navigate" data-target="#services" tabindex="0">
+            <span class="cmd-item-icon">⚡</span>
+            <div class="cmd-item-text">
+              <div class="cmd-item-title">Services &amp; Capabilities</div>
+              <div class="cmd-item-sub">Android development, Compose, APIs, QA, Google Play</div>
+            </div>
+            <span class="cmd-item-badge">#services</span>
+          </div>
+
+          <div class="cmd-item" data-action="navigate" data-target="#work" tabindex="0">
+            <span class="cmd-item-icon">🎮</span>
+            <div class="cmd-item-text">
+              <div class="cmd-item-title">Featured Case Study: Gamefinity Universe</div>
+              <div class="cmd-item-sub">Interactive 8x8 Mini-Blast game &amp; Google Play app</div>
+            </div>
+            <span class="cmd-item-badge">#work</span>
+          </div>
+
+          <div class="cmd-item" data-action="navigate" data-target="#engineering" tabindex="0">
+            <span class="cmd-item-icon">🏛️</span>
+            <div class="cmd-item-text">
+              <div class="cmd-item-title">Clean Architecture &amp; Benchmarks</div>
+              <div class="cmd-item-sub">Interactive layer flow &amp; real Kotlin code specs</div>
+            </div>
+            <span class="cmd-item-badge">#engineering</span>
+          </div>
+
+          <div class="cmd-item" data-action="navigate" data-target="#process" tabindex="0">
+            <span class="cmd-item-icon">🔄</span>
+            <div class="cmd-item-text">
+              <div class="cmd-item-title">7-Phase Engineering Process</div>
+              <div class="cmd-item-sub">Discover, Plan, Design, Develop, Test, Launch, Improve</div>
+            </div>
+            <span class="cmd-item-badge">#process</span>
+          </div>
+
+          <div class="cmd-item" data-action="navigate" data-target="#faq" tabindex="0">
+            <span class="cmd-item-icon">❓</span>
+            <div class="cmd-item-text">
+              <div class="cmd-item-title">Frequently Asked Questions</div>
+              <div class="cmd-item-sub">IP ownership, Play Store approvals, XML migrations, SLA</div>
+            </div>
+            <span class="cmd-item-badge">#faq</span>
+          </div>
+
+          <div class="cmd-item" data-action="navigate" data-target="#contact" tabindex="0">
+            <span class="cmd-item-icon">📬</span>
+            <div class="cmd-item-text">
+              <div class="cmd-item-title">Start a Project / Contact</div>
+              <div class="cmd-item-sub">Project intake form &amp; dynamic timeline estimator</div>
+            </div>
+            <span class="cmd-item-badge">#contact</span>
+          </div>
+        </div>
+
+        <div class="cmd-group-label">QUICK ACTIONS</div>
+        <div class="cmd-list" id="cmdActionList">
+          <div class="cmd-item" data-action="toggle-theme" tabindex="0">
+            <span class="cmd-item-icon">🌓</span>
+            <div class="cmd-item-text">
+              <div class="cmd-item-title">Toggle Dark / Light Theme</div>
+              <div class="cmd-item-sub">Switch between Android OLED Dark &amp; Light surfaces</div>
+            </div>
+            <span class="cmd-item-badge">Theme</span>
+          </div>
+
+          <div class="cmd-item" data-action="copy-email" tabindex="0">
+            <span class="cmd-item-icon">📋</span>
+            <div class="cmd-item-text">
+              <div class="cmd-item-title">Copy Studio Email</div>
+              <div class="cmd-item-sub">appfinitytechnologies@gmail.com</div>
+            </div>
+            <span class="cmd-item-badge">Action</span>
+          </div>
+
+          <div class="cmd-item" data-action="playstore" tabindex="0">
+            <span class="cmd-item-icon">🚀</span>
+            <div class="cmd-item-text">
+              <div class="cmd-item-title">View on Google Play</div>
+              <div class="cmd-item-sub">Open Gamefinity Universe store listing</div>
+            </div>
+            <span class="cmd-item-badge">External</span>
+          </div>
+
+          <div class="cmd-item" data-action="trigger-blast" tabindex="0">
+            <span class="cmd-item-icon">✨</span>
+            <div class="cmd-item-text">
+              <div class="cmd-item-title">Trigger 8x8 Mini-Blast Test (+1,200)</div>
+              <div class="cmd-item-sub">Simulate line clear with combo multiplier</div>
+            </div>
+            <span class="cmd-item-badge">Simulate</span>
+          </div>
+
+          <div class="cmd-item" data-action="reset-game" tabindex="0">
+            <span class="cmd-item-icon">🔄</span>
+            <div class="cmd-item-text">
+              <div class="cmd-item-title">Reset Block Puzzle Board</div>
+              <div class="cmd-item-sub">Clear the 8x8 matrix &amp; reload dock polyomino pieces</div>
+            </div>
+            <span class="cmd-item-badge">Game</span>
+          </div>
+
+          <div class="cmd-item" data-action="toggle-audio" tabindex="0">
+            <span class="cmd-item-icon">🔊</span>
+            <div class="cmd-item-text">
+              <div class="cmd-item-title">Toggle Web Audio Synthesizer</div>
+              <div class="cmd-item-sub">Mute or unmute tactile sound feedback</div>
+            </div>
+            <span class="cmd-item-badge">Sound</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="cmd-footer">
+        <div class="cmd-footer-keys">
+          <span><kbd>↑</kbd> <kbd>↓</kbd> to navigate</span>
+          <span><kbd>↵</kbd> to select</span>
+          <span><kbd>ESC</kbd> to close</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main JavaScript File -->
+  <script src="main.js"></script>
+</body>
+</html>
